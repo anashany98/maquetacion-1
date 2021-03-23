@@ -48,7 +48,7 @@
 
     <div class="form">
 
-        <form>
+        <form class="formulario" id="faqs-form">
             <div class="form-group">
                 
                 <div class="label-container">
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="input-container">
-                    <input type="text">
+                    <input name=pregunta type="text">
                 </div>
             </div>
 
@@ -67,13 +67,13 @@
                 </div>
 
                 <div class="input-container">
-                    <input type="text">
+                    <input name="respuesta"  type="text">
                 </div>
             
-            </div>
+            </div> 
 
             <div class="button">
-                <button> Enviar </button>
+                <button id="send"> Enviar </button>
             <div>
             
         </form>

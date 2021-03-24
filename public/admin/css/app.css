@@ -87,3 +87,11 @@
 .table tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.edit {
+  background-color: #adc596;
+}
+
+.remove {
+  background-color: #f39e9e;
+}

@@ -8,7 +8,7 @@
 }
 
 .form {
-  width: 40%;
+  width: 45%;
 }
 
 .form form {
@@ -30,10 +30,32 @@
 
 .input-container input {
   width: 100%;
+  box-shadow: 5px 5px 5px grey;
 }
 
-.button {
-  margin-top: 1em;
+.input-container #textarea {
+  width: 100%;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.button button {
+  background-color: white;
+  border: none;
+  color: white;
+  padding: 10px 13px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background-color: #008CBA;
+  color: white;
 }
 
 .button-container {
@@ -43,7 +65,7 @@
 }
 
 .table {
-  width: 40%;
+  width: 45%;
 }
 
 .table table {
@@ -56,6 +78,10 @@
   border: 1px solid #dddddd;
   text-align: left;
   padding: 1em;
+}
+
+.table td {
+  text-align: center;
 }
 
 .table tr:nth-child(even) {

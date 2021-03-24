@@ -30,7 +30,7 @@ class FaqController extends Controller
             return response()->json([
                 'table' => $sections['table'],
                 'form' => $sections['form'],
-            ]); 
+            ]);
         }
 
         return $view;

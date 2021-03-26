@@ -78,6 +78,7 @@
   border: 1px solid #dddddd;
   text-align: left;
   padding: 1em;
+  word-wrap: break-word;
 }
 
 .table td {

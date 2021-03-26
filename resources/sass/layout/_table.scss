@@ -14,14 +14,18 @@
     border: 1px solid #dddddd;
     text-align: left;
     padding: 1em;
+    word-wrap: break-word;
 }
 
 .table td{
     text-align: center;
+    
+    
 }
 
 .table tr:nth-child(even) {
     background-color: #dddddd;
+    
 }
 
 .edit{

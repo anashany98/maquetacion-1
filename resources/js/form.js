@@ -1,9 +1,12 @@
 
 const forms = document.querySelectorAll(".admin-form");
 const labels = document.getElementsByTagName('label');
-const inputs = document.querySelectorAll('.input')
+const inputs = document.querySelectorAll('.input');
 const enviar = document.getElementById("send");
 const table = document.getElementById("table");
+const form = document.getElementById("form")
+const editButtons= document.querySelectorAll(".edit");
+const removeButtons = document.querySelectorAll(".remove");
 
 
 inputs.forEach(input => {
@@ -57,3 +60,58 @@ enviar.addEventListener("click", (event) => {
     })
    
 })
+
+editButtons.forEach(editButton => {
+
+    editButton.addEventListener("click", (event) => {
+
+        let url = editButton.dataset.url;
+
+        let sendGetRequest = async () => {
+
+            try {
+                await axios.get(url).then(response => {
+                    form.innerHTML = response.data.form;
+                });
+                
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        sendGetRequest();
+
+        console.log('OK');
+    });
+});
+
+
+removeButtons.forEach(removeButton => {
+
+    removeButton.addEventListener("click", (event) => {
+
+        let url = removeButton.dataset.url;
+
+        let sendDeleteRequest = async () => {
+
+            try {
+                await axios.delete(url).then(response => {
+                   table.innerHTML=response.data.table;
+                })
+            }
+            catch (error) {
+                console.error(error);
+            }
+        };
+
+        sendDeleteRequest();
+
+        console.log('OK');
+    });
+});
+
+
+
+
+
+    

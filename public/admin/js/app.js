@@ -1940,6 +1940,9 @@ var labels = document.getElementsByTagName('label');
 var inputs = document.querySelectorAll('.input');
 var enviar = document.getElementById("send");
 var table = document.getElementById("table");
+var form = document.getElementById("form");
+var editButtons = document.querySelectorAll(".edit");
+var removeButtons = document.querySelectorAll(".remove");
 inputs.forEach(function (input) {
   input.addEventListener('focusin', function () {
     for (var i = 0; i < labels.length; i++) {
@@ -1998,6 +2001,90 @@ enviar.addEventListener("click", function (event) {
 
     sendPostRequest();
     console.log('1');
+  });
+});
+editButtons.forEach(function (editButton) {
+  editButton.addEventListener("click", function (event) {
+    var url = editButton.dataset.url;
+
+    var sendGetRequest = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios.get(url).then(function (response) {
+                  form.innerHTML = response.data.form;
+                });
+
+              case 3:
+                _context2.next = 8;
+                break;
+
+              case 5:
+                _context2.prev = 5;
+                _context2.t0 = _context2["catch"](0);
+                console.error(_context2.t0);
+
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 5]]);
+      }));
+
+      return function sendGetRequest() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+
+    sendGetRequest();
+    console.log('OK');
+  });
+});
+removeButtons.forEach(function (removeButton) {
+  removeButton.addEventListener("click", function (event) {
+    var url = removeButton.dataset.url;
+
+    var sendDeleteRequest = /*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios["delete"](url).then(function (response) {
+                  table.innerHTML = response.data.table;
+                });
+
+              case 3:
+                _context3.next = 8;
+                break;
+
+              case 5:
+                _context3.prev = 5;
+                _context3.t0 = _context3["catch"](0);
+                console.error(_context3.t0);
+
+              case 8:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 5]]);
+      }));
+
+      return function sendDeleteRequest() {
+        return _ref3.apply(this, arguments);
+      };
+    }();
+
+    sendDeleteRequest();
+    console.log('OK');
   });
 });
 

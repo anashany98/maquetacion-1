@@ -36,6 +36,7 @@
 .input-container #textarea {
   width: 100%;
   box-shadow: 5px 5px 5px grey;
+  height: 10vh;
 }
 
 .button button {

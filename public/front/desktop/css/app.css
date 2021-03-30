@@ -1,17 +1,45 @@
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: lightseagreen;
   height: 5%;
   outline: auto;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.titulo {
-  text-align: center;
-  vertical-align: middle;
-  font-size: 35px;
+.menu-button {
+  position: absolute;
+  left: 1em;
 }
 
-.faq {
-  background-color: cadetblue;
-  height: 94%;
+.faq-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 0.5em;
+  height: 95%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  height: 3em;
+  width: 52%;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  height: 3em;
+  margin-top: 0.2em;
+  width: 50%;
 }

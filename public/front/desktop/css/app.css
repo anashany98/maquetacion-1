@@ -1,0 +1,17 @@
+.header {
+  background-color: lightseagreen;
+  height: 5%;
+  outline: auto;
+}
+
+.titulo {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 35px;
+}
+
+.faq {
+  background-color: cadetblue;
+  height: 94%;
+  margin-top: 0.5em;
+}

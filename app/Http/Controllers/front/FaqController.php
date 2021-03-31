@@ -22,8 +22,7 @@ class FaqController extends Controller
     public function index()
     {
 
-        $view = View::make('front.faqs')
-                ->with('faq', $this->faq)
+        $view = View::make('front.faqs.index')
                 ->with('faqs', $this->faq->where('active', 1)->get());
 
         if(request()->ajax()) {

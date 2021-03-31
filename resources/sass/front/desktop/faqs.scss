@@ -1,13 +1,21 @@
+.main-content{
+    margin: 0;
+}
 
 .header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:lightseagreen;
-    height: 5%;
+    background-color:hsl(177, 70%, 41%);
+    height: 5vh;
+    width: 98%;
     outline: auto;
     font-size: 24px;
     font-weight: bold;
+    margin-top: 0.2em;
+    margin-left: 1%;
+    margin-right: 1%;
+    
 }
 
 .menu-button{
@@ -16,35 +24,59 @@
     left:1em;
 }
 
-.faq-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5em;
-    height: 95%;
-}
-.title{
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    height: 3em;
-    width: 52%;
-  
+.faqs{
+    width: 60%;
+    margin: 0 auto;
 }
 
-.description{
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    height: 3em;
-    margin-top: 0.2em;
-    width: 50%;
+.faq{
+    margin-top: 0.5em;
 }
+
+.faq-header{
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.2em solid hsl(0, 0%, 0%);
+    border-bottom: 0.2em solid hsl(0, 0%, 0%);
+    width: 100%;
+    margin-top: 0.5em;
+
+    .faq-button{
+        margin: 0.5em;
+        cursor: pointer;
+    }
+    
+    .faq-button:hover svg{
+        fill:hsl(177, 70%, 41%);
+    }
+    
+    .faq-title h2{
+        font-size: 1em;
+        line-height: 3em;
+        margin: 0;
+        margin-left: 0.5em;
+    }
+}
+
+.faq-description{
+
+    font-size: 1em;
+    max-height: 0;
+    overflow: hidden;
+
+    p{
+        font-weight: 400;
+        margin: 0.5em;
+    }
+}
+
+.faq-description.active{
+    background-color:hsla(177, 70%, 41%, 0.521); 
+    max-height: 100vh;
+    
+   
+}
+
 
 
 

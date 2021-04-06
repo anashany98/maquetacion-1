@@ -428,9 +428,7 @@ ol, ul {
   outline: auto;
   font-size: 24px;
   font-weight: bold;
-  margin-top: 0.2em;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin: 0.2em auto;
 }
 
 .menu-button {
@@ -453,7 +451,7 @@ ol, ul {
   border-top: 0.2em solid black;
   border-bottom: 0.2em solid black;
   width: 100%;
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 .faq-header .faq-button {
   margin: 0.5em;

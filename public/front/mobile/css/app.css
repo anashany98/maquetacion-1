@@ -413,3 +413,73 @@ th {
 ol, ul {
   list-style: none;
 }
+
+.main-content {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #1fb2aa;
+  height: 5vh;
+  width: 98%;
+  outline: auto;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0.2em auto;
+}
+
+.menu-button {
+  position: absolute;
+  left: 1em;
+  margin-top: 0.2em;
+}
+
+.faqs {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.faq {
+  margin-top: 0.5em;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.2em solid black;
+  border-bottom: 0.2em solid black;
+  width: 100%;
+  margin-top: 0.5em;
+}
+.faq-header .faq-button {
+  height: 1em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+.faq-header .faq-button:hover svg {
+  fill: #1fb2aa;
+}
+.faq-header .faq-title h2 {
+  font-size: 0.8em;
+  line-height: 3em;
+  margin: 0;
+  margin-left: 0.5em;
+}
+
+.faq-description {
+  font-size: 0.6em;
+  max-height: 0;
+  overflow: hidden;
+}
+.faq-description p {
+  font-weight: 400;
+  margin: 0.5em;
+}
+
+.faq-description.active {
+  background-color: rgba(31, 178, 170, 0.521);
+  max-height: 100vh;
+}

@@ -4,15 +4,16 @@
 
 .header{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: baseline;
     background-color:hsl(177, 70%, 41%);
     height: 5vh;
     width: 98%;
     outline: auto;
     font-size: 24px;
     font-weight: bold;
-   margin: 0.2em auto;
+    margin: 00.2em auto;
+   
     
 }
 
@@ -20,10 +21,12 @@
 
     position:absolute;
     left:1em;
+    margin-top: 0.2em;
+    
 }
 
 .faqs{
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -37,9 +40,10 @@
     border-top: 0.2em solid hsl(0, 0%, 0%);
     border-bottom: 0.2em solid hsl(0, 0%, 0%);
     width: 100%;
-    margin-top: 1em;
+    margin-top: 0.5em;
 
     .faq-button{
+        height: 1em;
         margin: 0.5em;
         cursor: pointer;
     }
@@ -49,7 +53,7 @@
     }
     
     .faq-title h2{
-        font-size: 1em;
+        font-size: 0.8em;
         line-height: 3em;
         margin: 0;
         margin-left: 0.5em;
@@ -58,7 +62,7 @@
 
 .faq-description{
 
-    font-size: 1em;
+    font-size: 0.6em;
     max-height: 0;
     overflow: hidden;
 
@@ -72,9 +76,4 @@
     background-color:hsla(177, 70%, 41%, 0.521); 
     max-height: 100vh;
 }
-
-
-
-
-
 

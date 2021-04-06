@@ -1,0 +1,25 @@
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "xs" {
+        @media (max-width:479px) {
+        @content;
+        }
+    }
+
+    @else if $breakpoint == "sm" {
+        @media (max-width:767px) {
+        @content;
+        }
+    }
+
+    @else if $breakpoint == "md" {
+        @media (min-width:992px) and (max-width:1200px) {
+        @content;
+        }
+    }
+
+    @else if $breakpoint == "lg" {
+        @media (min-width: 1920px) {
+        @content;
+        }
+    }
+}

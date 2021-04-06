@@ -78,7 +78,7 @@
 .table td, .table th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 1em;
+  padding: 0.4em;
   word-wrap: break-word;
 }
 
@@ -94,7 +94,15 @@
 .edit {
   background-color: #adc596;
 }
+.edit svg {
+  width: 24px;
+  height: 24px;
+}
 
 .remove {
   background-color: #f39e9e;
+}
+.remove svg {
+  width: 24px;
+  height: 24px;
 }

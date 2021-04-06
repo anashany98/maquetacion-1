@@ -1,6 +1,7 @@
 
 .table{
-    width: 45%;
+    width: 100%;
+    margin-top: 1em;
     
 }
 
@@ -19,8 +20,11 @@
 
 .table td{
     text-align: center;
-
+    font-size: 0.8em;
+    
+    
 }
+
 .table tr:nth-child(even) {
     background-color: #dddddd;
     word-wrap: break-word;    
@@ -29,15 +33,15 @@
 .edit{
     background-color: rgb(173, 197, 150);
     svg{
-        width: 24px;
-        height: 24px ;
+        width: 15px;
+        height: 15px ;
     }
 }
 
 .remove{
     background-color: rgb(243, 158, 158);
     svg{
-        width: 24px;
-        height: 24px ;
+        width: 15px;
+        height: 15px ;
     }
 }

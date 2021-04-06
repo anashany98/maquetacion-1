@@ -19,13 +19,13 @@
                 <div class="faq-title">
                     <h2>{{$faq->title}}</h2>
                 </div>
-                <div class="faq-button" id="{{$faq->id}}">
+                <div class="faq-button" data-button="{{$faq->id}}">
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path d="M22,4V2H2V4H11V18.17L5.5,12.67L4.08,14.08L12,22L19.92,14.08L18.5,12.67L13,18.17V4H22Z" />
                     </svg>
                 </div>
             </div>
-            <div class="faq-description" id="text">
+            <div class="faq-description" data-content="{{$faq->id}}">
                 <p>{{$faq->description}}</p>
             </div>
             

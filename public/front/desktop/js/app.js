@@ -1872,8 +1872,28 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (() => {
 
 var faqButtons = document.querySelectorAll(".faq-button");
+var faqElements = document.querySelectorAll(".faq-description");
 faqButtons.forEach(function (faqButton) {
-  addEventListener("click", function () {});
+  faqButton.addEventListener("click", function () {
+    var activeElements = document.querySelectorAll(".active");
+
+    if (faqButton.classList.contains("active")) {
+      faqButton.classList.remove("active");
+      activeElements.forEach(function (activeElement) {
+        activeElement.classList.remove("active");
+      });
+    } else {
+      activeElements.forEach(function (activeElement) {
+        activeElement.classList.remove("active");
+      });
+      faqButton.classList.add("active");
+      faqElements.forEach(function (faq) {
+        if (faq.dataset.content == faqButton.dataset.button) {
+          faq.classList.add("active");
+        } else {}
+      });
+    }
+  });
 });
 
 /***/ }),

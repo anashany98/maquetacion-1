@@ -51,12 +51,14 @@
 
 @section('form')
 
-    <form class="formulario" action="{{route("faqs_categories_store")}}" id="faqCategory-form">
+    <form class="formulario admin-form" action="{{route("faqs_categories_store")}}">
 
         {{ csrf_field() }}
 
 
         <div class="form-group">
+            <input type="hidden" name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
+
             
             <div class="label-container">
                 <label for="name">Nombre:</label>

@@ -1,43 +1,62 @@
 
 .table{
-    width: 45%;
-    
+    width: 60%;
 }
 
 .table table {
+    border-collapse: collapse;
     font-family: arial, sans-serif;
-    width: 100%;
-    background-color: white;
+    width: 95%;
+    background-color: hsl(0, 0%, 100%);
+        
+}
+
+.table tr{
+    border-bottom: 0.1em solid hsl(0, 0%, 0%);
 }
 
 .table td, .table th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 0.4em;
-    word-wrap: break-word;
+
+    text-align: center;
+    word-wrap: break-all;
 }
 
 .table td{
+    padding: 0em;
     text-align: center;
 
 }
 .table tr:nth-child(even) {
-    background-color: #dddddd;
-    word-wrap: break-word;    
+    background-color: hsl(0, 0%, 100%);
+    word-wrap: break-all;    
+}
+
+.table .button-container{
+
+    width: 0.5em;
 }
 
 .edit{
-    background-color: rgb(173, 197, 150);
+    background-color: hsl(0, 0%, 100%);
+    border: none;
     svg{
-        width: 24px;
-        height: 24px ;
+     
+        width: 15px;
+        height: 15px ;
     }
+}
+.edit button:hover{
+    background-color: hsl(140, 94%, 32%);
+    color: hsl(0, 0%, 100%);
+    
 }
 
 .remove{
-    background-color: rgb(243, 158, 158);
+    background-color: hsl(0, 0%, 100%);
+    border: none;
     svg{
-        width: 24px;
-        height: 24px ;
+        
+        width: 15px;
+        height: 15px ;
     }
 }

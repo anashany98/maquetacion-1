@@ -1,11 +1,14 @@
 
 
 .form {
-    width: 45%;
+    width: 30%;
 }
 
 .form form{
+    
     width: 100%;
+  
+    
 }
 
 .form-group {
@@ -26,14 +29,12 @@
 
 .input-container input{
     width: 100%;
-    box-shadow: 5px 5px 5px grey;
+   
     
 }
 
-.input-container #textarea{
-    width: 100%;
-    box-shadow: 5px 5px 5px grey;
-    height: 10vh;
+.category{
+        width: 100%;
 }
 
 
@@ -47,27 +48,22 @@
   color: black;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 0.5em ;
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
+
 
 .button button:hover {
     background-color: #008CBA;
     color: white;
   }
 
-
-
-.button-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 .category-name{
 
     width: 100%;
+
     select{
         width: 100%;
     }

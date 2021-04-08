@@ -11,10 +11,17 @@
 
     @include('admin.layout.partials.style')
 </head>
+
 <body>
-    <div class="main"> 
-        @yield('content')
+
+    <div class="wrapper">
+        @include('admin.layout.partials.sidebar')
+
+        <div class="main">   
+            @yield('content')
+        </div>
     </div>
+    
     @include('admin.layout.partials.js')
 </body>
 </html>

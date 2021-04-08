@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="table" id="table">
         @yield('table')
     </div>

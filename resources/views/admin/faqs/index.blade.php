@@ -28,7 +28,7 @@
                 </td>
 
                 <td>
-                    {{$faq_element->category->name}}
+                    {{$faq_element->category_id}}
                 </td>
 
                 <td>
@@ -60,7 +60,7 @@
 
 @section('form')
 
-    <form class="formulario" action="{{route("faqs_store")}}" id="faqs-form">
+    <form class="formulario admin-form" action="{{route("faqs_store")}}">
 
         {{ csrf_field() }}
 
@@ -84,14 +84,18 @@
             </div>
 
             <div class="input-container">
-                <textarea id="textarea" name="description"  type="text" >{{isset($faq->description) ? $faq->description : ''}}</textarea>
+                <textarea id="textarea" class="ckeditor" name="description"  type="text" >{{isset($faq->description) ? $faq->description : ''}}</textarea>
             </div>  
         
         </div> 
 
         <div class="category-name">
-            <select name="category_id"> 
+            <select class="category" name="category_id"> 
                 <option> </option>
+                @foreach($faqs_categories as $faq_category_element)
+                <option value="{{$faq_category_element->id}}"> {{$faq_category_element->name}} </option>
+                @endforeach
+                
             </select>
 
         </div>

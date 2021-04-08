@@ -508,17 +508,11 @@ ol, ul {
   word-wrap: break-word;
 }
 
-.edit {
-  background-color: #adc596;
-}
 .edit svg {
   width: 15px;
   height: 15px;
 }
 
-.remove {
-  background-color: #f39e9e;
-}
 .remove svg {
   width: 15px;
   height: 15px;

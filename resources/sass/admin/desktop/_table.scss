@@ -1,6 +1,7 @@
 
 .table{
     width: 60%;
+    margin-top: 5vh;
 }
 
 .table table {
@@ -9,6 +10,10 @@
     width: 95%;
     background-color: hsl(0, 0%, 100%);
         
+}
+
+.table table:hover{
+    box-shadow: 0 0.2em 0.3em 0 rgba(0,0,0,0.24), 0 0.2em 1em 0 rgba(0,0,0,0.19);
 }
 
 .table tr{
@@ -39,13 +44,15 @@
 .edit{
     background-color: hsl(0, 0%, 100%);
     border: none;
+    width: 6em;
+    transition-duration: 0.5s;
     svg{
      
         width: 15px;
         height: 15px ;
     }
 }
-.edit button:hover{
+.edit:hover{
     background-color: hsl(140, 94%, 32%);
     color: hsl(0, 0%, 100%);
     
@@ -54,9 +61,17 @@
 .remove{
     background-color: hsl(0, 0%, 100%);
     border: none;
+    width: 6em;
+    transition-duration: 0.5s;
     svg{
         
         width: 15px;
         height: 15px ;
     }
+}
+.remove:hover{
+    background-color: hsl(0, 94%, 32%);
+    color: hsl(0, 0%, 100%);
+    
+    
 }

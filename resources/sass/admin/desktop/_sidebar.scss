@@ -2,7 +2,9 @@
     width: 10%;
     background-color: hsl(182, 38%, 68%);
 }
-
+.sidebar:hover{
+    box-shadow: 0 0.2em 0.3em 0 rgba(0,0,0,0.24), 0 0.2em 1em 0 rgba(0,0,0,0.19);
+}
 
 .menu-button{
     width:2em;

@@ -7,13 +7,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 5vh;
   height: 100vh;
   width: 90%;
 }
 
 .form {
   width: 30%;
+  margin-top: 5vh;
 }
 
 .form form {
@@ -70,6 +70,7 @@
 
 .table {
   width: 60%;
+  margin-top: 5vh;
 }
 
 .table table {
@@ -77,6 +78,10 @@
   font-family: arial, sans-serif;
   width: 95%;
   background-color: white;
+}
+
+.table table:hover {
+  box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.24), 0 0.2em 1em 0 rgba(0, 0, 0, 0.19);
 }
 
 .table tr {
@@ -105,13 +110,15 @@
 .edit {
   background-color: white;
   border: none;
+  width: 6em;
+  transition-duration: 0.5s;
 }
 .edit svg {
   width: 15px;
   height: 15px;
 }
 
-.edit button:hover {
+.edit:hover {
   background-color: #059e38;
   color: white;
 }
@@ -119,15 +126,26 @@
 .remove {
   background-color: white;
   border: none;
+  width: 6em;
+  transition-duration: 0.5s;
 }
 .remove svg {
   width: 15px;
   height: 15px;
 }
 
+.remove:hover {
+  background-color: #9e0505;
+  color: white;
+}
+
 .sidebar {
   width: 10%;
   background-color: #8ecacc;
+}
+
+.sidebar:hover {
+  box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.24), 0 0.2em 1em 0 rgba(0, 0, 0, 0.19);
 }
 
 .menu-button {

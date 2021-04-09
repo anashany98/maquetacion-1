@@ -1,5 +1,5 @@
 @extends('admin.layout.table_form')
-
+    
 @section('table')
 
     <table>

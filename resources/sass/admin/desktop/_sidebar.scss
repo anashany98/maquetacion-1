@@ -1,30 +1,51 @@
 .sidebar{
-    width: 10%;
+    width: 0;
+    height: 100%;
     background-color: hsl(182, 38%, 68%);
-}
-.sidebar:hover{
-    box-shadow: 0 0.2em 0.3em 0 rgba(0,0,0,0.24), 0 0.2em 1em 0 rgba(0,0,0,0.19);
+    position:fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
 }
 
-.menu-button{
-    width:2em;
-    height:2em  ;
+.sidebar.active{
+    width: 10%;
+}
 
+.sidebar-button{
+    width:3em;
+    height:3em ;
+    z-index: 2;
+    position: fixed;
+    cursor: pointer;
     svg{
         width:2em;
         height:2em;
     }
 }
+.sidebar-button.active{
+    svg{
+        color: hsl(0, 0%, 100%);
+    }
+}
+
+
 
 .link-menu{
     font-size: 1.5em;
     margin-top: 0.5em;
     ul{
         padding: 0;
+        margin-top: 2em;
     }
     
     li{
         cursor: pointer;
         margin-top: 0.5em;
     }
+}
+
+li:hover{
+    color: hsl(0, 0%, 100%);
+    
 }

@@ -1,14 +1,17 @@
 
 .table{
     width: 60%;
-    margin-top: 5vh;
+    margin-top: 8vh;
 }
+
 
 .table table {
     border-collapse: collapse;
     font-family: arial, sans-serif;
     width: 95%;
     background-color: hsl(0, 0%, 100%);
+    overflow-wrap: break-word;
+    table-layout: fixed;
         
 }
 
@@ -18,22 +21,22 @@
 
 .table tr{
     border-bottom: 0.1em solid hsl(0, 0%, 0%);
+    
 }
 
 .table td, .table th {
 
     text-align: center;
-    word-wrap: break-all;
+
 }
 
 .table td{
-    padding: 0em;
-    text-align: center;
-
+    width: 8em;
+    
 }
 .table tr:nth-child(even) {
     background-color: hsl(0, 0%, 100%);
-    word-wrap: break-all;    
+
 }
 
 .table .button-container{

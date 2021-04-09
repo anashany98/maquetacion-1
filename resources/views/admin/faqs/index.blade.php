@@ -1,7 +1,8 @@
-    @extends('admin.layout.table_form')
+ @extends('admin.layout.table_form')
+    
 
 @section('table')
-
+ 
     <table>
         
         <tr>
@@ -28,7 +29,7 @@
                 </td>
 
                 <td>
-                    {{$faq_element->category_id}}
+                    {{$faq_element->category->name}}
                 </td>
 
                 <td>

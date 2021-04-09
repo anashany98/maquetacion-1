@@ -11,9 +11,21 @@
   width: 90%;
 }
 
+.title-page {
+  text-align: center;
+  border-bottom: 0.1em solid #8ecacc;
+  position: fixed;
+  top: auto;
+  margin-top: 0.5em;
+  height: 4vh;
+  width: 6em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
 .form {
   width: 30%;
-  margin-top: 5vh;
+  margin-top: 8vh;
 }
 
 .form form {
@@ -57,7 +69,7 @@
 }
 
 .button button:hover {
-  background-color: #008CBA;
+  background-color: #8ecacc;
   color: white;
 }
 
@@ -70,7 +82,7 @@
 
 .table {
   width: 60%;
-  margin-top: 5vh;
+  margin-top: 8vh;
 }
 
 .table table {
@@ -78,6 +90,8 @@
   font-family: arial, sans-serif;
   width: 95%;
   background-color: white;
+  overflow-wrap: break-word;
+  table-layout: fixed;
 }
 
 .table table:hover {
@@ -90,17 +104,14 @@
 
 .table td, .table th {
   text-align: center;
-  word-wrap: break-all;
 }
 
 .table td {
-  padding: 0em;
-  text-align: center;
+  width: 8em;
 }
 
 .table tr:nth-child(even) {
   background-color: white;
-  word-wrap: break-all;
 }
 
 .table .button-container {
@@ -140,21 +151,33 @@
 }
 
 .sidebar {
-  width: 10%;
+  width: 0;
+  height: 100%;
   background-color: #8ecacc;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
-.sidebar:hover {
-  box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.24), 0 0.2em 1em 0 rgba(0, 0, 0, 0.19);
+.sidebar.active {
+  width: 10%;
 }
 
-.menu-button {
+.sidebar-button {
+  width: 3em;
+  height: 3em;
+  z-index: 2;
+  position: fixed;
+  cursor: pointer;
+}
+.sidebar-button svg {
   width: 2em;
   height: 2em;
 }
-.menu-button svg {
-  width: 2em;
-  height: 2em;
+
+.sidebar-button.active svg {
+  color: white;
 }
 
 .link-menu {
@@ -163,10 +186,15 @@
 }
 .link-menu ul {
   padding: 0;
+  margin-top: 2em;
 }
 .link-menu li {
   cursor: pointer;
   margin-top: 0.5em;
+}
+
+li:hover {
+  color: white;
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */

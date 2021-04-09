@@ -1,4 +1,3 @@
-
 import {renderCkeditor} from './ckeditor'
 const table = document.getElementById("table");
 const form = document.getElementById("form");
@@ -37,12 +36,12 @@ export let renderForm = () => {
                         
             let data = new FormData(form);
 
-            // if( ckeditors != 'null'){
+            if( ckeditors != 'null'){
 
-            //     Object.entries(ckeditors).forEach(([key, value]) => {
-            //         data.append(key, value.getData());
-            //     });
-            // }
+                Object.entries(ckeditors).forEach(([key, value]) => {
+                    data.append(key, value.getData());
+                });
+            }
 
             let url = form.action;
     
@@ -76,6 +75,7 @@ export let renderForm = () => {
             sendPostRequest();
         });
     });
+    
     renderCkeditor()
 };
 

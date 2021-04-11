@@ -38,6 +38,17 @@ Route::group(['prefix' => 'admin'], function () {
             'show' => 'faqs_show',
         ]
     ]);
+
+    Route::resource('stock', 'App\Http\Controllers\Admin\StockController', [
+        'names' => [
+            'index' => 'stock',
+            'create' => 'stock_create',
+            'store' => 'stock_store',
+            'destroy' => 'stock_destroy',
+            'show' => 'stock_show',
+        ]
+    ]);
+
 });
 
 Route::get('/faqs', 'App\Http\Controllers\front\FaqController@index')->name('faqs_front');

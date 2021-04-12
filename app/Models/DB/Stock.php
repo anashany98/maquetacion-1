@@ -5,7 +5,7 @@ namespace App\Models\DB;
 class Stock extends DBModel
 {
 
-    protected $table = 'stock_table';
+    protected $table = 't_stock';
     
     public function category()
     {

@@ -49,6 +49,19 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('usuarios', 'App\Http\Controllers\Admin\UserController', [
+        'parameters' => [
+            'usuarios' => 'user', 
+        ],
+        'names' => [
+            'index' => 'users',
+            'create' => 'users_create',
+            'store' => 'users_store',
+            'destroy' => 'users_destroy',
+            'show' => 'users_show',
+        ]
+    ]);
+
 });
 
 Route::get('/faqs', 'App\Http\Controllers\front\FaqController@index')->name('faqs_front');

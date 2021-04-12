@@ -20,7 +20,7 @@ class StockController extends Controller{
     {
 
         $view = View::make('admin.stock.index')
-                ->with('stock', $this->stock->where('active', 1)->get())
+                ->with('stocks', $this->stock->where('active', 1)->get())
                 ->with('stock', $this->stock);
 
         if(request()->ajax()) {
@@ -51,15 +51,15 @@ class StockController extends Controller{
     public function store(StockRequest $request)
     {
 
-        $stock = StockCategory::updateOrCreate([
-            'id' => request('id'),
+        $stock = Stock::updateOrCreate([
+            'id' => request('id')],[
             'name' => request('name'),
             'stock'=> request('stock'),
             'active' => 1,
         ]);
 
         $view = View::make('admin.stock.index')
-        ->with('stock', $this->stock->where('active', 1)->get())
+        ->with('stocks', $this->stock->where('active', 1)->get())
         ->with('stock', $stock)
         ->renderSections();
 
@@ -70,7 +70,7 @@ class StockController extends Controller{
         ]);
     }
 
-    public function edit(StockCategory $stock)
+    public function edit(Stock $stock)
     {
                 
         $view = View::make('admin.stock.index')
@@ -87,11 +87,11 @@ class StockController extends Controller{
         return $view;
     }
 
-    public function show(StockCategory $stock)
+    public function show(Stock $stock)
     {
         $view = View::make('admin.stock.index')
         ->with('stock', $stock)
-        ->with('stock', $this->stock->where('active', 1)->get());   
+        ->with('stocks', $this->stock->where('active', 1)->get());   
         
         if(request()->ajax()) {
 
@@ -106,13 +106,13 @@ class StockController extends Controller{
 
     }
 
-    public function destroy(StockCategory $stock)
+    public function destroy(Stock $stock)
     {   
         $stock->active = 0;
         $stock->save();
 
         $view = View::make('admin.stock.index')
-        ->with('stock', $this->stock->where('active', 1)->get())
+        ->with('stocks', $this->stock->where('active', 1)->get())
         ->with('stock', $this->stock)
         ->renderSections();
         

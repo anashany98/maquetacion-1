@@ -1,8 +1,14 @@
 
 
 .form {
+    background-color: hsl(0, 0%, 100%);
     width: 30%;
+    height: 50vh;
     margin-top: 8vh;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
+
 }
 
 .form form{
@@ -11,6 +17,7 @@
 }
 
 .form-group {
+    
    margin-bottom: 1em; 
 }
 
@@ -34,7 +41,7 @@
 }
 
 .category{
-        width: 100%;
+    width: 100%;
 }
 
 

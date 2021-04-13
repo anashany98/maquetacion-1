@@ -2,6 +2,7 @@ import {renderCkeditor} from './ckeditor'
 const table = document.getElementById("table");
 const form = document.getElementById("form");
 
+
 export let renderForm = () => {
 
     let forms = document.querySelectorAll(".admin-form");
@@ -134,7 +135,3 @@ export let renderTable = () => {
 
 renderForm();
 renderTable();
-
-
-
-    

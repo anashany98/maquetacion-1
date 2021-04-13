@@ -1,33 +1,35 @@
 
 .table{
-    width: 60%;
+    width: 55%;
     margin-top: 8vh;
 }
 
-
 .table table {
-    border-collapse: collapse;
+    border-collapse:collapse;
     font-family: arial, sans-serif;
-    width: 95%;
+    width:98%;
     background-color: hsl(0, 0%, 100%);
     overflow-wrap: break-word;
     table-layout: fixed;
-        
+    box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
+    
+   
 }
 
-.table table:hover{
-    box-shadow: 0 0.2em 0.3em 0 rgba(0,0,0,0.24), 0 0.2em 1em 0 rgba(0,0,0,0.19);
-}
+
 
 .table tr{
-    border-bottom: 0.1em solid hsl(0, 0%, 0%);
+    border-bottom: 0.1em solid hsla(0, 0%, 0%, 0.315);
     
 }
 
 .table td, .table th {
 
     text-align: center;
-
+    
+}
+th{
+    height: 2em;
 }
 
 .table td{
@@ -36,18 +38,18 @@
 }
 .table tr:nth-child(even) {
     background-color: hsl(0, 0%, 100%);
-
+    
 }
 
 .table .button-container{
 
-    width: 0.5em;
+    width:100%;
 }
 
 .edit{
     background-color: hsl(0, 0%, 100%);
     border: none;
-    width: 6em;
+    width:100%;
     transition-duration: 0.5s;
     svg{
      
@@ -64,7 +66,7 @@
 .remove{
     background-color: hsl(0, 0%, 100%);
     border: none;
-    width: 6em;
+    width: 100%;
     transition-duration: 0.5s;
     svg{
         

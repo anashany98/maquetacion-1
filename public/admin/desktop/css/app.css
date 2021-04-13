@@ -8,7 +8,8 @@
   flex-direction: row;
   justify-content: space-around;
   height: 100vh;
-  width: 90%;
+  width: 100%;
+  background-color: #b0b0b0;
 }
 
 .title-page {
@@ -24,8 +25,13 @@
 }
 
 .form {
+  background-color: white;
   width: 30%;
+  height: 50vh;
   margin-top: 8vh;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226);
 }
 
 .form form {
@@ -82,29 +88,30 @@
 }
 
 .table {
-  width: 60%;
+  width: 55%;
   margin-top: 8vh;
 }
 
 .table table {
   border-collapse: collapse;
   font-family: arial, sans-serif;
-  width: 95%;
+  width: 98%;
   background-color: white;
   overflow-wrap: break-word;
   table-layout: fixed;
-}
-
-.table table:hover {
-  box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.24), 0 0.2em 1em 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226);
 }
 
 .table tr {
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1em solid rgba(0, 0, 0, 0.315);
 }
 
 .table td, .table th {
   text-align: center;
+}
+
+th {
+  height: 2em;
 }
 
 .table td {
@@ -116,13 +123,13 @@
 }
 
 .table .button-container {
-  width: 0.5em;
+  width: 100%;
 }
 
 .edit {
   background-color: white;
   border: none;
-  width: 6em;
+  width: 100%;
   transition-duration: 0.5s;
 }
 .edit svg {
@@ -138,7 +145,7 @@
 .remove {
   background-color: white;
   border: none;
-  width: 6em;
+  width: 100%;
   transition-duration: 0.5s;
 }
 .remove svg {

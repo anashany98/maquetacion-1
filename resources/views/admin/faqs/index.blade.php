@@ -4,7 +4,7 @@
 @section('table')
  
     <table>
-        
+          
         <tr>
             <th>ID</th>
             <th>Pregunta</th>
@@ -52,8 +52,8 @@
                 
             </tr>
         @endforeach
-
-            
+    
+                
 
     </table>
 

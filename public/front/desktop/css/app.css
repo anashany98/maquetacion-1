@@ -481,3 +481,49 @@ ol, ul {
   background-color: rgba(31, 178, 170, 0.521);
   max-height: 100vh;
 }
+
+.login_main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #b0b0b0;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 30em;
+  height: 50vh;
+  box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226);
+  margin-top: 8em;
+  background-color: white;
+  border-radius: 2em;
+}
+#login-form label {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+#login-form input {
+  width: 60%;
+  margin: 0 auto;
+}
+#login-form button {
+  width: 6em;
+  margin: 1em auto;
+  height: 2em;
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.svg_box {
+  height: 6em;
+}
+.svg_box svg {
+  width: 6em;
+  height: 6em;
+}

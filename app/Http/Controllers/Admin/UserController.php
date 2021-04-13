@@ -15,6 +15,7 @@ class UserController extends Controller
 
     function __construct(User $user)
     {
+        $this->middleware('auth');
         $this->user = $user;
     }
 
@@ -52,13 +53,25 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {            
-        $user = $this->user->updateOrCreate([
-            'id' => request('id')],[
-            'name' => request('name'),
-            'email' => request('email'),
-            'password'=>bcrypt(request('password')),
-            'active' => 1,
-        ]);
+        if (request('password') !== null) {
+
+            $user = User::updateOrCreate([
+                'id' => request('id')],[
+                'name' => request('name'),
+                'email' => request('email'),
+                'password' => bcrypt(request('password')),
+                'active' => 1,
+            ]);
+            
+        }else{
+
+            $user = User::updateOrCreate([
+                'id' => request('id')],[
+                'name' => request('name'),
+                'email' => request('email'),
+                'active' => 1,
+            ]);
+        }
 
         $view = View::make('admin.user.index')
         ->with('users', $this->user->where('active', 1)->get())

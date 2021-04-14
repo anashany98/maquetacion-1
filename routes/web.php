@@ -67,7 +67,7 @@ Route::group(['prefix' => 'admin'], function () {
             'clientes' => 'client', 
         ],
         'names' => [
-            'index' => 'customers_categories',
+            'index' => 'customers',
             'create' => 'customers_create',
             'store' => 'customers_store',
             'destroy' => 'customers_destroy',
@@ -77,8 +77,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::get('/faqs', 'App\Http\Controllers\front\FaqController@index')->name('faqs_front');
+Route::post('/fingerprint', 'App\Http\Controllers\Front\FingerprintController@store')->name('front_fingerprint');
 
+Route::get('/faqs', 'App\Http\Controllers\front\FaqController@index')->name('faqs_front');
 Route::get('/login', 'App\Http\Controllers\Front\LoginController@index')->name('front_login');
 Route::post('/login', 'App\Http\Controllers\Front\LoginController@login')->name('front_login_submit');
 Route::get('/', 'App\Http\Controllers\Front\HomeController@index')->name('home_front');

@@ -1,4 +1,4 @@
- @extends('admin.layout.table_form')
+@extends('admin.layout.table_form')
     
 
 @section('table')
@@ -90,8 +90,8 @@
         
         </div> 
 
-        <div class="category-name">
-            <select class="category" name="category_id"> 
+        <div class="categories">
+            <select class="categories" name="categories"> 
                 <option> </option>
                 @foreach($faqs_categories as $faq_category_element)
                 <option value="{{$faq_category_element->id}}"> {{$faq_category_element->name}} </option>

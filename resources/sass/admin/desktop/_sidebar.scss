@@ -1,33 +1,19 @@
 .sidebar{
-    width: 0;
+    width:0;
     height: 100%;
-    background-color: hsl(182, 38%, 68%);
+    background-color:hsl(0, 0%, 0%);
     position:fixed;
     z-index: 1;
     overflow-x: hidden;
     transition: 0.5s;
+    
 }
 
 .sidebar.active{
     width: 10%;
 }
 
-.sidebar-button{
-    width:3em;
-    height:3em ;
-    z-index: 2;
-    position: fixed;
-    cursor: pointer;
-    svg{
-        width:2em;
-        height:2em;
-    }
-}
-.sidebar-button.active{
-    svg{
-        color: hsl(0, 0%, 100%);
-    }
-}
+
 
 
 
@@ -36,16 +22,17 @@
     margin-top: 0.5em;
     ul{
         padding: 0;
-        margin-top: 2em;
+        margin-top: 3em;
     }
     
     li{
+        color: hsl(0, 0%, 100%);
         cursor: pointer;
         margin-top: 0.5em;
     }
 }
 
 li:hover{
-    color: hsl(0, 0%, 100%);
+    color:  hsl(182, 38%, 68%);
     
 }

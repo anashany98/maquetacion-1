@@ -34,8 +34,8 @@ class ClientRequest extends FormRequest
             'telefono' => 'required',
             'nif'=>'required',
             'cp'=>'required',
-            'direccion'=>'required',
-            'localidad'=>'required',
+            'address'=>'required',
+            'ciudad'=>'required',
         ];
     }
 
@@ -48,8 +48,8 @@ class ClientRequest extends FormRequest
             'telefono.require'=>'El NIF es obligatorio',
             'email.require'=>'El NIF es obligatorio',
             'cp.require'=>'El NIF es obligatorio',
-            'direccion.required'=>'La direccion es obligatoria',
-            'localidad.required'=>'La localidad es obligatoria',
+            'address.required'=>'La direccion es obligatoria',
+            'ciudad.required'=>'La ciudad es obligatoria',
         ];
     }
 }

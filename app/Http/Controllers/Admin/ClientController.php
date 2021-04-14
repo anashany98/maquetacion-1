@@ -58,9 +58,10 @@ class ClientController extends Controller
             'name' => request('name'),
             'email' => request('email'),
             'telefono' => request('telefono'),
-            'direccion'=> request('direccion'),
+            'address'=> request('address'),
+            'country_id'=>request('country_id'),
             'cp'=> request('cp'),
-            'localidad'=> request('localidad'),
+            'ciudad'=> request('ciudad'),
             'nif' => request('nif'),
             'active' => 1,
           

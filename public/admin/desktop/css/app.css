@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -12,22 +13,10 @@
   background-color: #b0b0b0;
 }
 
-.title-page {
-  text-align: center;
-  border-bottom: 0.1em solid #8ecacc;
-  position: fixed;
-  top: auto;
-  margin-top: 0.5em;
-  height: 4vh;
-  width: 6em;
-  font-size: 2em;
-  font-weight: bold;
-}
-
 .form {
   background-color: white;
   width: 30%;
-  height: 60vh;
+  height: 80vh;
   margin-top: 8vh;
   padding: 1em;
   border-radius: 1em;
@@ -57,6 +46,10 @@
 }
 
 .category {
+  width: 100%;
+}
+
+.county-box {
   width: 100%;
 }
 
@@ -162,7 +155,7 @@ th {
 .sidebar {
   width: 0;
   height: 100%;
-  background-color: #8ecacc;
+  background-color: black;
   position: fixed;
   z-index: 1;
   overflow-x: hidden;
@@ -173,37 +166,54 @@ th {
   width: 10%;
 }
 
-.sidebar-button {
-  width: 3em;
-  height: 3em;
-  z-index: 2;
-  position: fixed;
-  cursor: pointer;
-}
-.sidebar-button svg {
-  width: 2em;
-  height: 2em;
-}
-
-.sidebar-button.active svg {
-  color: white;
-}
-
 .link-menu {
   font-size: 1.5em;
   margin-top: 0.5em;
 }
 .link-menu ul {
   padding: 0;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 .link-menu li {
+  color: white;
   cursor: pointer;
   margin-top: 0.5em;
 }
 
 li:hover {
+  color: #8ecacc;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 3em;
+  background-color: black;
+  z-index: 2;
+}
+
+.sidebar-button {
+  width: 3em;
+  height: 3em;
+  z-index: 3;
+  cursor: pointer;
   color: white;
+}
+.sidebar-button svg {
+  width: 3em;
+  height: 3em;
+}
+
+.title-page {
+  color: white;
+  text-align: center;
+  margin-top: 0.5em;
+  height: 3vh;
+  width: 4em;
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */

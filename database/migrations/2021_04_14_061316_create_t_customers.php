@@ -19,9 +19,10 @@ class CreateTCustomers extends Migration
             $table->string('email');
             $table->string('telefono');
             $table->string('nif');
-            $table->string('direccion');
+            $table->string('address');
             $table->string('cp');
-            $table->string('localidad');
+            $table->string('ciudad');
+            $table->string('country_id');
             $table->boolean('active');
             $table->timestamps();
         });

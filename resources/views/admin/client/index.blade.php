@@ -103,7 +103,19 @@
             <div class="input-container">
                 <input name="nif"  value="{{isset($client->nif) ? $client->nif : ''}}" >
             </div>
+            
+            <div class="label-container">
+                <label for="country">Pais:</label>
+            </div>
 
+            <select name="country_id" class="county-box" >
+                <option></option>
+                @foreach ($countries as $country)
+                    <option value="{{$country->id}}" {{$client->country_id == $country->id ? "selected" : ""}}>{{$country->name}}</option>
+                @endforeach
+            </select> 
+    
+            
             <div class="label-container">
                 <label for="cp">CP:</label>
             </div>
@@ -112,18 +124,18 @@
                 <input name="cp" value="{{isset($client->cp) ? $client->cp : ''}}" >
             </div>
             <div class="label-container">
-                <label for="localidad">Localidad:</label>
+                <label for="ciudad">Ciudad:</label>
             </div>
 
             <div class="input-container">
-                <input  name="localidad" value="{{isset($client->localidad) ? $client->localidad : ''}}" >
+                <input  name="ciudad" value="{{isset($client->ciudad) ? $client->ciudad : ''}}" >
             </div>
             <div class="label-container">
-                <label for="direccion">Dirección:</label>
+                <label for="address">Dirección:</label>
             </div>
 
             <div class="input-container">
-                <input name="direccion" value="{{isset($client->direccion) ? $client->direccion : ''}}" >
+                <input name="address" value="{{isset($client->address) ? $client->address : ''}}" >
             </div>
 
         </div>

@@ -1,7 +1,11 @@
+
+
 .wrapper{
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
+
 
 .main{
     display: flex;
@@ -13,16 +17,3 @@
     
 }
 
-.title-page{
-    text-align: center;
-    border-bottom: 0.1em solid hsl(182, 38%, 68%);;
-    position: fixed;
-    top:auto;
-    margin-top: 0.5em;
-    height: 4vh;
-    width: 6em;
-    font-size: 2em;
-    font-weight: bold;
-
-    
-}

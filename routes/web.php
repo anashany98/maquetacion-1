@@ -62,6 +62,19 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('clientes', 'App\Http\Controllers\Admin\ClientController', [
+        'parameters' => [
+            'clientes' => 'client', 
+        ],
+        'names' => [
+            'index' => 'customers_categories',
+            'create' => 'customers_create',
+            'store' => 'customers_store',
+            'destroy' => 'customers_destroy',
+            'show' => 'customers_show',
+        ]
+    ]);
+
 });
 
 Route::get('/faqs', 'App\Http\Controllers\front\FaqController@index')->name('faqs_front');

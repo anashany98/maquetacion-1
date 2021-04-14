@@ -12,7 +12,8 @@ use App\Models\DB\Stock;
 class StockController extends Controller{
 
     function __construct(Stock $stock)
-    {        
+    {     
+        $this->middleware('auth');     
         $this->stock = $stock;
     }
 

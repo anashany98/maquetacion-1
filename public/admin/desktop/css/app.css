@@ -27,7 +27,7 @@
 .form {
   background-color: white;
   width: 30%;
-  height: 50vh;
+  height: 60vh;
   margin-top: 8vh;
   padding: 1em;
   border-radius: 1em;
@@ -95,7 +95,7 @@
 .table table {
   border-collapse: collapse;
   font-family: arial, sans-serif;
-  width: 98%;
+  width: 100%;
   background-color: white;
   overflow-wrap: break-word;
   table-layout: fixed;
@@ -115,6 +115,7 @@ th {
 }
 
 .table td {
+  font-size: 0.8em;
   width: 8em;
 }
 

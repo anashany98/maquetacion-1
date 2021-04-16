@@ -1,7 +1,7 @@
 
 .table{
-    width: 55%;
-    margin-top: 8vh;
+    width: 40%;
+    margin-top: 4vh;
 }
 
 .table table {
@@ -37,6 +37,14 @@ th{
     width: 8em;
     
 }
+.table tr:hover{
+    background-color:hsl(0, 0%, 90%) ;
+}
+.table tr:nth-child(even):hover{
+    background-color:hsl(0, 0%, 90%) ;
+
+}
+
 .table tr:nth-child(even) {
     background-color: hsl(0, 0%, 100%);
     

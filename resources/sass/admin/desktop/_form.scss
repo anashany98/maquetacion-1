@@ -2,9 +2,9 @@
 
 .form {
     background-color: hsl(0, 0%, 100%);
-    width: 30%;
+    width: 50%;
     height: 80vh;
-    margin-top: 8vh;
+    margin-top: 4vh;
     padding: 1em;
     border-radius: 1em;
     box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
@@ -20,32 +20,33 @@
     
    margin-bottom: 1em; 
 }
+.column{
+    float: left;
+    width: 50%;
+    height: 100%;
 
+}
 .label-container {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    width: 100%;
-
+    width: 90%;
 }
 
 .input-container{
-    width: 100%;   
+    width: 90%;   
 }
-
-
 
 .input-container input{
     width: 100%;
    
-    
 }
 
-.category{
-    width: 100%;
+.categories{
+    width: 91%;
 }
 
 .county-box{
-    width: 100%;
+    width: 91%;
 }
 
 .button button{
@@ -64,7 +65,9 @@
 }
 
 
-
+.button{
+    width: 8em;
+}
 .button button:hover {
     background-color:  hsl(182, 38%, 68%);
     color: white;

@@ -1,3 +1,8 @@
+@php
+    $route="faqs"
+@endphp
+
+
 @extends('admin.layout.table_form')
     
 
@@ -52,9 +57,7 @@
                 
             </tr>
         @endforeach
-    
-                
-
+        
     </table>
 
 @endsection
@@ -64,52 +67,58 @@
     <form class="formulario admin-form" action="{{route("faqs_store")}}">
 
         {{ csrf_field() }}
+        <div class="column">
+            <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
 
-        <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
-
-        <div class="form-group">
-            
-            <div class="label-container">
-                <label for="pregunta">Pregunta:</label>
-            </div>
-
-            <div class="input-container">
-                <input name="title" type="text" value="{{isset($faq->title) ? $faq->title : ''}}" >
-            </div>
-        </div>
-
-        <div class="form-group">
-
-            <div class="label-container">
-                <label for="respuesta">Respuesta:</label>
-            </div>
-
-            <div class="input-container">
-                <textarea id="textarea" class="ckeditor" name="description"  type="text" >{{isset($faq->description) ? $faq->description : ''}}</textarea>
-            </div>  
-        
-        </div> 
-
-        <div class="categories">
-            <select class="categories" name="categories"> 
-                <option> </option>
-                @foreach($faqs_categories as $faq_category_element)
-                <option value="{{$faq_category_element->id}}"> {{$faq_category_element->name}} </option>
-                @endforeach
+            <div class="form-group">
                 
-            </select>
+                <div class="label-container">
+                    <label for="pregunta">Pregunta:</label>
+                </div>
 
+                <div class="input-container">
+                    <input name="title" type="text" value="{{isset($faq->title) ? $faq->title : ''}}" >
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="label-container">
+                    <label for="respuesta">Respuesta:</label>
+                </div>
+
+                <div class="input-container">
+                    <textarea id="textarea" class="ckeditor" name="description"  type="text" >{{isset($faq->description) ? $faq->description : ''}}</textarea>
+                </div>  
+            
+            </div> 
+            <div class="form-group">
+                <label for="category_id" class="label-highlight">
+                    Categoría 
+                </label>
+
+                <div class="category_id">
+                    
+                    <select class="categories" name="category_id"> 
+                        <option> </option>
+
+                        @foreach($faqs_categories as $faq_category_element)
+                            <option value="{{$faq_category_element->id}}" {{$faq_category_element->id == $faq->category_id ? 'selected' : ''}}> {{$faq_category_element->name}} </option>
+                        @endforeach
+                        
+                    </select>
+                </div>
+            </div> 
         </div>
+        <div class="column">
+            <div class="button">
+                <button id="send"> Enviar </button>
+            <div>
 
-
-        <div class="button">
-            <button id="send"> Enviar </button>
-        <div>
-
-        <div class="button">
-            <button id="reload" onclick="location.reload()"> Reload </button>
-        <div>
-        
+            <div class="button">
+                <button id="reload" onclick="location.reload()"> Reload </button>
+            <div>
+        </div>
     </form>
 
 @endsection

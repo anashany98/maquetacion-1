@@ -6,7 +6,12 @@
     width: 100%;
 }
 
+.body{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
 
+}
 .main{
     display: flex;
     flex-direction: row;

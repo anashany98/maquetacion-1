@@ -1,3 +1,7 @@
+@php
+    $route='faqs_categories'
+@endphp
+
 @extends('admin.layout.table_form')
     
 @section('table')
@@ -42,9 +46,7 @@
                 
             </tr>
         @endforeach
-
-            
-
+        
     </table>
 
 @endsection
@@ -55,28 +57,29 @@
 
         {{ csrf_field() }}
 
+        <div class="column">
+            <div class="form-group">
+                <input type="hidden" name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
 
-        <div class="form-group">
-            <input type="hidden" name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
+                
+                <div class="label-container">
+                    <label for="name">Nombre:</label>
+                </div>
 
-            
-            <div class="label-container">
-                <label for="name">Nombre:</label>
-            </div>
-
-            <div class="input-container">
-                <input name="name" type="text" value="{{isset($faq_category->name) ? $faq_category->name : ''}}" >
+                <div class="input-container">
+                    <input name="name" type="text" value="{{isset($faq_category->name) ? $faq_category->name : ''}}" >
+                </div>
             </div>
         </div>
+        <div class="column">
+            <div class="button">
+                <button id="send"> Enviar </button>
+            <div>
 
-        <div class="button">
-            <button id="send"> Enviar </button>
-        <div>
-
-        <div class="button">
-            <button id="reload" onclick="location.reload()"> Reload </button>
-        <div>
-        
+            <div class="button">
+                <button id="reload" onclick="location.reload()"> Reload </button>
+            <div>
+        </div>
     </form>
 
 @endsection

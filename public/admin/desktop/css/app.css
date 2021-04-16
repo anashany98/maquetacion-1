@@ -4,6 +4,12 @@
   width: 100%;
 }
 
+.body {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+
 .main {
   display: flex;
   flex-direction: row;
@@ -15,9 +21,9 @@
 
 .form {
   background-color: white;
-  width: 30%;
+  width: 50%;
   height: 80vh;
-  margin-top: 8vh;
+  margin-top: 4vh;
   padding: 1em;
   border-radius: 1em;
   box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226);
@@ -31,26 +37,32 @@
   margin-bottom: 1em;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
 .label-container {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  width: 100%;
+  width: 90%;
 }
 
 .input-container {
-  width: 100%;
+  width: 90%;
 }
 
 .input-container input {
   width: 100%;
 }
 
-.category {
-  width: 100%;
+.categories {
+  width: 91%;
 }
 
 .county-box {
-  width: 100%;
+  width: 91%;
 }
 
 .button button {
@@ -68,6 +80,10 @@
   cursor: pointer;
 }
 
+.button {
+  width: 8em;
+}
+
 .button button:hover {
   background-color: #8ecacc;
   color: white;
@@ -81,8 +97,8 @@
 }
 
 .table {
-  width: 55%;
-  margin-top: 8vh;
+  width: 40%;
+  margin-top: 4vh;
 }
 
 .table table {
@@ -110,6 +126,14 @@ th {
 .table td {
   font-size: 0.8em;
   width: 8em;
+}
+
+.table tr:hover {
+  background-color: #e6e6e6;
+}
+
+.table tr:nth-child(even):hover {
+  background-color: #e6e6e6;
 }
 
 .table tr:nth-child(even) {
@@ -163,7 +187,7 @@ th {
 }
 
 .sidebar.active {
-  width: 10%;
+  width: 11%;
 }
 
 .link-menu {
@@ -178,6 +202,7 @@ th {
   color: white;
   cursor: pointer;
   margin-top: 0.5em;
+  margin-left: 0.5em;
 }
 
 li:hover {
@@ -211,7 +236,7 @@ li:hover {
   text-align: center;
   margin-top: 0.5em;
   height: 3vh;
-  width: 4em;
+  width: 10em;
   font-size: 1.8em;
   font-weight: bold;
 }

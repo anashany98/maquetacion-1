@@ -1,5 +1,5 @@
 .sidebar{
-    width:0;
+    width: 0;
     height: 100%;
     background-color:hsl(0, 0%, 0%);
     position:fixed;
@@ -10,12 +10,8 @@
 }
 
 .sidebar.active{
-    width: 10%;
+    width: 11%;
 }
-
-
-
-
 
 .link-menu{
     font-size: 1.5em;
@@ -29,6 +25,7 @@
         color: hsl(0, 0%, 100%);
         cursor: pointer;
         margin-top: 0.5em;
+        margin-left: 0.5em;
     }
 }
 

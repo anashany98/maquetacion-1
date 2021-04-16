@@ -1,3 +1,4 @@
+
 @extends('admin.layout.table_form')
     
 @section('table')
@@ -46,9 +47,7 @@
                 
             </tr>
         @endforeach
-
-            
-
+        
     </table>
 
 @endsection

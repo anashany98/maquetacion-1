@@ -1,3 +1,8 @@
+@php
+    $route='client'
+@endphp
+
+
 @extends('admin.layout.table_form')
     
 @section('table')
@@ -6,7 +11,7 @@
         
         <tr>
             <th>ID</th>
-            <th>Nombre/Razon Social</th>
+            <th>Nombre/ Razon Social</th>
             <th>Email</th>
             <th>C.P.</th>
             <th>Telefono</th>
@@ -32,8 +37,6 @@
                     {{$client_element->telefono}}
                 </td>
                
-
-               
                 <td>
                     <div class="button-container">
 
@@ -53,9 +56,7 @@
                 </td>
                 
             </tr>
-        @endforeach
-
-            
+        @endforeach  
 
     </table>
 
@@ -69,85 +70,87 @@
 
 
         <div class="form-group">
-            <input type="hidden" name="id" value="{{isset($client->id) ? $client->id : ''}}">
+            <div class="column">
+                <input type="hidden" name="id" value="{{isset($client->id) ? $client->id : ''}}">
 
-        
-            <div class="label-container">
-                <label for="name">Nombre/Razon Social:</label>
-            </div>
-
-            <div class="input-container">
-                <input name="name" value="{{isset($client->name) ? $client->name : ''}}" >
-            </div>
-
-            <div class="label-container">
-                <label for="email">Email:</label>
-            </div>
-
-            <div class="input-container">
-                <input name="email" type="text" value="{{isset($client->email) ? $client->email : ''}}" >
-            </div>
-
-            <div class="label-container">
-                <label for="telefono" >Telefono:</label>
-            </div>
-
-            <div class="input-container">
-                <input  name="telefono" value="{{isset($client->telefono) ? $client->telefono : ''}}" >
-            </div>
-
-            <div class="label-container">
-                <label for="nif">NIF:</label>
-            </div>
-
-            <div class="input-container">
-                <input name="nif"  value="{{isset($client->nif) ? $client->nif : ''}}" >
-            </div>
             
-            <div class="label-container">
-                <label for="country">Pais:</label>
-            </div>
+                <div class="label-container">
+                    <label for="name">Nombre/Razon Social:</label>
+                </div>
 
-            <select name="country_id" class="county-box" >
-                <option></option>
-                @foreach ($countries as $country)
-                    <option value="{{$country->id}}" {{$client->country_id == $country->id ? "selected" : ""}}>{{$country->name}}</option>
-                @endforeach
-            </select> 
-    
+                <div class="input-container">
+                    <input name="name" value="{{isset($client->name) ? $client->name : ''}}" >
+                </div>
+
+                <div class="label-container">
+                    <label for="email">Email:</label>
+                </div>
+
+                <div class="input-container">
+                    <input name="email" type="text" value="{{isset($client->email) ? $client->email : ''}}" >
+                </div>
+
+                <div class="label-container">
+                    <label for="telefono" >Telefono:</label>
+                </div>
+
+                <div class="input-container">
+                    <input  name="telefono" value="{{isset($client->telefono) ? $client->telefono : ''}}" >
+                </div>
+
+                <div class="label-container">
+                    <label for="nif">NIF:</label>
+                </div>
+
+                <div class="input-container">
+                    <input name="nif"  value="{{isset($client->nif) ? $client->nif : ''}}" >
+                </div>
+                
+                <div class="label-container">
+                    <label for="country">Pais:</label>
+                </div>
+                <select name="country_id" class="county-box" >
+                    <option></option>
+                    @foreach ($countries as $country)
+                        <option value="{{$country->id}}" {{$client->country_id == $country->id ? "selected" : ""}}>{{$country->name}}</option>
+                    @endforeach
+                </select> 
+            </div>
+            <div class="column">
             
-            <div class="label-container">
-                <label for="cp">CP:</label>
-            </div>
+                <div class="label-container">
+                    <label for="cp">CP:</label>
+                </div>
 
-            <div class="input-container">
-                <input name="cp" value="{{isset($client->cp) ? $client->cp : ''}}" >
-            </div>
-            <div class="label-container">
-                <label for="ciudad">Ciudad:</label>
-            </div>
+                <div class="input-container">
+                    <input name="cp" value="{{isset($client->cp) ? $client->cp : ''}}" >
+                </div>
+                <div class="label-container">
+                    <label for="ciudad">Ciudad:</label>
+                </div>
 
-            <div class="input-container">
-                <input  name="ciudad" value="{{isset($client->ciudad) ? $client->ciudad : ''}}" >
+                <div class="input-container">
+                    <input  name="ciudad" value="{{isset($client->ciudad) ? $client->ciudad : ''}}" >
+                </div>
+                <div class="label-container">
+                    <label for="address">Dirección:</label>
+                </div>
+
+                <div class="input-container">
+                    <input name="address" value="{{isset($client->address) ? $client->address : ''}}" >
+                </div>
+
+               
+                <div class="button-form">
+                    <div class="button">
+                        <button id="send"> Enviar </button>
+                    <div>
+
+                    <div class="button">
+                        <button id="reload" onclick="location.reload()"> Reload </button>
+                    <div>
+                </div>
             </div>
-            <div class="label-container">
-                <label for="address">Dirección:</label>
-            </div>
-
-            <div class="input-container">
-                <input name="address" value="{{isset($client->address) ? $client->address : ''}}" >
-            </div>
-
-        </div>
-
-        <div class="button">
-            <button id="send"> Enviar </button>
-        <div>
-
-        <div class="button">
-            <button id="reload" onclick="location.reload()"> Reload </button>
-        <div>
-        
     </form>
 
 @endsection

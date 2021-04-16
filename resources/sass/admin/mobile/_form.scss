@@ -1,45 +1,57 @@
 
 
 .form {
-    margin-top: 1em;
+    display: none;
+    background-color: hsl(0, 0%, 100%);
     width: 90%;
-    margin-left: 1em;
-    
+    height: 55vh;
+    margin-top: 4vh;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
+
+}
+.form.visible{
+    height: 100vh;
 }
 
 .form form{
-    width: 100%;
+    
+    width: 100%;  
 }
 
 .form-group {
+    
    margin-bottom: 1em; 
 }
+.column{
+    float: left;
+    width: 50%;
+    height: 100%;
 
+}
 .label-container {
-    
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
-    width: 100%;
-
+    width: 90%;
 }
 
 .input-container{
-    width: 100%;   
+    width: 90%;   
 }
-
-
 
 .input-container input{
     width: 100%;
-    box-shadow: 5px 5px 5px grey;
-    
+   
 }
 
-.input-container #textarea{
-    width: 100%;
-    box-shadow: 5px 5px 5px grey;
-    height: 10vh;
+.categories{
+    width: 91%;
 }
 
+.county-box{
+    width: 91%;
+}
 
 .button button{
   background-color: white;
@@ -51,20 +63,26 @@
   color: black;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 0.5em ;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
+
+.button{
+    width: 8em;
+}
 .button button:hover {
-    background-color: #008CBA;
+    background-color:  hsl(182, 38%, 68%);
     color: white;
   }
 
+.category-name{
 
+    width: 100%;
 
-.button-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    select{
+        width: 100%;
+    }
+   
 }

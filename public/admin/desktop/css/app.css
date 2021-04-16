@@ -5,8 +5,6 @@
 }
 
 .body {
-  display: flex;
-  flex-direction: row-reverse;
   justify-content: left;
 }
 
@@ -22,7 +20,7 @@
 .form {
   background-color: white;
   width: 50%;
-  height: 80vh;
+  height: 40vh;
   margin-top: 4vh;
   padding: 1em;
   border-radius: 1em;
@@ -181,13 +179,14 @@ th {
   height: 100%;
   background-color: black;
   position: fixed;
+  right: 0;
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
 }
 
 .sidebar.active {
-  width: 11%;
+  width: 20%;
 }
 
 .link-menu {

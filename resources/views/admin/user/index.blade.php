@@ -9,20 +9,13 @@
     <table>
         
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-           
             <th></th>
         </tr>
         
         @foreach($users as $user_element)
             <tr>
-                
-                <td>
-                    {{$user_element->id}}
-                </td>
-                
                 <td>
                     {{$user_element->name}}
                 </td>
@@ -65,55 +58,63 @@
 
         {{ csrf_field() }}
 
-        
-            <div class="form-group">
-                <div class="column">
-                    <input type="hidden" name="id" value="{{isset($user->id) ? $user->id : ''}}">
-
+    
+        <div class="form-group">
+            <div class="column">
+                <div class="label-container">
+                    <label for="id">ID:</label>
+                </div>
+                <div class="input-container">
+                    <input name="id" value="{{isset($user->id) ? $user->id : ''}}">
+                </div>
                 
-                    <div class="label-container">
-                        <label for="name">Nombre:</label>
-                    </div>
 
-                    <div class="input-container">
-                        <input name="name" type="text" value="{{isset($user->name) ? $user->name : ''}}" >
-                    </div>
-
-                    <div class="label-container">
-                        <label for="email">Email:</label>
-                    </div>
-
-                    <div class="input-container">
-                        <input name="email" type="text" value="{{isset($user->email) ? $user->email : ''}}" >
-                    </div>
-
-                    <div class="label-container">
-                        <label for="email">Contraseña:</label>
-                    </div>
-
-                    <div class="input-container">
-                        <input name="password" type="password" value="{{isset($user->password) ? $user->password : ''}}" >
-                    </div>
-
-                    <div class="label-container">
-                        <label for="password_confirmation">Repita Contraseña:</label>
-                    </div>
-
-                    <div class="input-container">
-                        <input name="password_confirmation" type="password" value="{{isset($user->password) ? $user->password : ''}}" >
-                    </div>
+            
+                <div class="label-container">
+                    <label for="name">Nombre:</label>
                 </div>
-                <div class="column">
-                    <div class="button">
-                        <button id="send"> Enviar </button>
-                    <div>
-        
-                    <div class="button">
-                        <button id="reload" onclick="location.reload()"> Reload </button>
-                    <div>
 
+                <div class="input-container">
+                    <input name="name" type="text" value="{{isset($user->name) ? $user->name : ''}}" >
                 </div>
+
+                <div class="label-container">
+                    <label for="email">Email:</label>
+                </div>
+
+                <div class="input-container">
+                    <input name="email" type="text" value="{{isset($user->email) ? $user->email : ''}}" >
+                </div>
+
+               
             </div>
+            
+            <div class="column">
+                <div class="label-container">
+                    <label for="email">Contraseña:</label>
+                </div>
+
+                <div class="input-container">
+                    <input name="password" type="password" value="{{isset($user->password) ? $user->password : ''}}" >
+                </div>
+
+                <div class="label-container">
+                    <label for="password_confirmation">Repita Contraseña:</label>
+                </div>
+
+                <div class="input-container">
+                    <input name="password_confirmation" type="password" value="{{isset($user->password) ? $user->password : ''}}" >
+                </div>
+                <div class="button">
+                    <button id="send"> Enviar </button>
+                </div>
+    
+                <div class="button">
+                    <button id="reload" onclick="location.reload()"> Reload </button>
+                </div>
+
+            </div>
+        </div>
        
     </form>
 

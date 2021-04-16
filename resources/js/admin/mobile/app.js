@@ -1,4 +1,9 @@
 require('../../bootstrap');
+require('./form');
+require('./ckeditor');
+require('./sidebar');
+require('./bottombar');
+
 
 /**
  * First we will load all of this project's JavaScript dependencies which

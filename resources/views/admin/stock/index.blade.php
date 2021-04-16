@@ -82,11 +82,11 @@
 
         <div class="button">
             <button id="send"> Enviar </button>
-        <div>
+        </div>
 
         <div class="button">
             <button id="reload" onclick="location.reload()"> Reload </button>
-        <div>
+        </div>
         
     </form>
 

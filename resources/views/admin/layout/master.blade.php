@@ -22,7 +22,11 @@
             <div class="main"> 
                 @yield('content')
             </div>
-       <div>
+        </div>
+
+        @if($agent->isMobile())
+            @include('admin.layout.partials.bottombar')
+        @endif
     </div>
     
     @include('admin.layout.partials.js')

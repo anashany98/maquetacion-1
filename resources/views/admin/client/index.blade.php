@@ -10,10 +10,8 @@
     <table>
         
         <tr>
-            <th>ID</th>
             <th>Nombre/ Razon Social</th>
             <th>Email</th>
-            <th>C.P.</th>
             <th>Telefono</th>
             <th></th>
         </tr>
@@ -21,18 +19,14 @@
         @foreach($customers as $client_element)
             <tr>
                 
-                <td>
-                    {{$client_element->id}}
-                </td>  
+             
                 <td>
                     {{$client_element->name}}
                 </td>
                 <td>
                     {{$client_element->email}}
                 </td>
-                <td>
-                    {{$client_element->cp}}
-                </td>
+        
                 <td>
                     {{$client_element->telefono}}
                 </td>
@@ -71,9 +65,13 @@
 
         <div class="form-group">
             <div class="column">
-                <input type="hidden" name="id" value="{{isset($client->id) ? $client->id : ''}}">
 
-            
+                <div class="label-container">
+                    <label for="id">ID:</label>
+                </div>
+                <div class="input-container">
+                    <input  name="id" value="{{isset($client->id) ? $client->id : ''}}">
+                </div>
                 <div class="label-container">
                     <label for="name">Nombre/Razon Social:</label>
                 </div>
@@ -106,6 +104,8 @@
                     <input name="nif"  value="{{isset($client->nif) ? $client->nif : ''}}" >
                 </div>
                 
+            </div>
+            <div class="column">
                 <div class="label-container">
                     <label for="country">Pais:</label>
                 </div>
@@ -115,8 +115,6 @@
                         <option value="{{$country->id}}" {{$client->country_id == $country->id ? "selected" : ""}}>{{$country->name}}</option>
                     @endforeach
                 </select> 
-            </div>
-            <div class="column">
             
                 <div class="label-container">
                     <label for="cp">CP:</label>
@@ -144,11 +142,11 @@
                 <div class="button-form">
                     <div class="button">
                         <button id="send"> Enviar </button>
-                    <div>
+                    </div>
 
                     <div class="button">
                         <button id="reload" onclick="location.reload()"> Reload </button>
-                    <div>
+                    </div>
                 </div>
             </div>
     </form>

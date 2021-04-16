@@ -9,17 +9,12 @@
     <table>
         
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th></th>
         </tr>
         
         @foreach($faqs_categories as $faq_category_element)
             <tr>
-                
-                <td>
-                    {{$faq_category_element->id}}
-                </td>
                 
                 <td>
                     {{$faq_category_element->name}}
@@ -59,7 +54,13 @@
 
         <div class="column">
             <div class="form-group">
-                <input type="hidden" name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
+                <div class="label-container">   
+                    <label for="id">ID:</label>
+                </div>
+                <div class="input-container">
+                    <input  name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
+                </div>
+               
 
                 
                 <div class="label-container">
@@ -74,11 +75,11 @@
         <div class="column">
             <div class="button">
                 <button id="send"> Enviar </button>
-            <div>
+            </div>
 
             <div class="button">
                 <button id="reload" onclick="location.reload()"> Reload </button>
-            <div>
+            </div>
         </div>
     </form>
 

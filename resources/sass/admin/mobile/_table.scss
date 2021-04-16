@@ -1,47 +1,96 @@
 
 .table{
+    display: none;
     width: 100%;
-    margin-top: 1em;
+    
     
 }
 
+.table.visible{
+    height: 100vh;
+}
 .table table {
+    border-collapse:collapse;
     font-family: arial, sans-serif;
-    width: 100%;
-    background-color: white;
+    width:100%;
+    background-color: hsl(0, 0%, 100%);
+    overflow-wrap: break-word;
+    table-layout: fixed;
+    box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
+    
+   
+}
+
+
+
+.table tr{
+    border-bottom: 0.1em solid hsla(0, 0%, 0%, 0.315);
+    
 }
 
 .table td, .table th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 0.4em;
-    word-wrap: break-word;
+
+    text-align: center;
+    
+}
+th{
+    height: 2em;
 }
 
 .table td{
-    text-align: center;
     font-size: 0.8em;
+    width: 8em;
     
-    
+}
+.table tr:hover{
+    background-color:hsl(0, 0%, 90%) ;
+}
+.table tr:nth-child(even):hover{
+    background-color:hsl(0, 0%, 90%) ;
+
 }
 
 .table tr:nth-child(even) {
-    background-color: #dddddd;
-    word-wrap: break-word;    
+    background-color: hsl(0, 0%, 100%);
+    
+}
+
+.table .button-container{
+
+    width:100%;
 }
 
 .edit{
-   
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    width:100%;
+    transition-duration: 0.5s;
     svg{
+     
         width: 15px;
         height: 15px ;
     }
 }
+.edit:hover{
+    background-color: hsl(140, 94%, 32%);
+    color: hsl(0, 0%, 100%);
+    
+}
 
 .remove{
-   
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    width: 100%;
+    transition-duration: 0.5s;
     svg{
+        
         width: 15px;
         height: 15px ;
     }
+}
+.remove:hover{
+    background-color: hsl(0, 94%, 32%);
+    color: hsl(0, 0%, 100%);
+    
+    
 }

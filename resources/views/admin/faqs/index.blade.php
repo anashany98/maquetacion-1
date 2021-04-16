@@ -11,7 +11,6 @@
     <table>
           
         <tr>
-            <th>ID</th>
             <th>Pregunta</th>
             <th>Respuesta</th>
             <th>Categoria</th>
@@ -20,10 +19,6 @@
         
         @foreach($faqs as $faq_element)
             <tr>
-                
-                <td>
-                    {{$faq_element->id}}
-                </td>
                 
                 <td>
                     {{$faq_element->title}}
@@ -68,7 +63,18 @@
 
         {{ csrf_field() }}
         <div class="column">
-            <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
+
+            <div class="form-group">
+                
+                <div class="label-container">
+                    <label for="id">ID:</label>
+                </div>
+
+                <div class="input-container">
+                    <input  name="id" value="{{isset($faq->id) ? $faq->id : ''}}">
+                </div>
+            </div>
+            
 
             <div class="form-group">
                 
@@ -92,32 +98,36 @@
                 </div>  
             
             </div> 
-            <div class="form-group">
-                <label for="category_id" class="label-highlight">
-                    Categoría 
-                </label>
-
-                <div class="category_id">
-                    
-                    <select class="categories" name="category_id"> 
-                        <option> </option>
-
-                        @foreach($faqs_categories as $faq_category_element)
-                            <option value="{{$faq_category_element->id}}" {{$faq_category_element->id == $faq->category_id ? 'selected' : ''}}> {{$faq_category_element->name}} </option>
-                        @endforeach
-                        
-                    </select>
-                </div>
-            </div> 
+            
         </div>
         <div class="column">
+            <div class="form-group">
+                <div class="label-container">
+                    <label for="category_id" class="label-highlight">
+                        Categoría 
+                    </label>
+                </div>
+                <div class="input-container">
+                    <div class="category_id">
+                        
+                        <select class="categories" name="category_id"> 
+                            <option> </option>
+
+                            @foreach($faqs_categories as $faq_category_element)
+                                <option value="{{$faq_category_element->id}}" {{$faq_category_element->id == $faq->category_id ? 'selected' : ''}}> {{$faq_category_element->name}} </option>
+                            @endforeach
+                            
+                        </select>
+                    </div>
+                </div>
+            </div> 
             <div class="button">
                 <button id="send"> Enviar </button>
-            <div>
+            </div>
 
             <div class="button">
                 <button id="reload" onclick="location.reload()"> Reload </button>
-            <div>
+            </div>
         </div>
     </form>
 

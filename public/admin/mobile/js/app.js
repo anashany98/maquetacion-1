@@ -1876,7 +1876,26 @@ module.exports = {
   \************************************************/
 /***/ (() => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\andoni.valero\\Git\\maquetacion\\resources\\js\\admin\\mobile\\bottombar.js: Identifier 'formButton' has already been declared (2:6)\n\n\u001b[0m \u001b[90m 1 |\u001b[39m \u001b[36mconst\u001b[39m formButton\u001b[33m=\u001b[39mdocument\u001b[33m.\u001b[39mquerySelectorAll(\u001b[32m'.form-button'\u001b[39m)\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 |\u001b[39m \u001b[36mconst\u001b[39m formButton\u001b[33m=\u001b[39mdocument\u001b[33m.\u001b[39mquerySelectorAll(\u001b[32m'.form-button'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m \u001b[36mconst\u001b[39m form \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelectorAll(\u001b[32m\".form\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[36mconst\u001b[39m form \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelectorAll(\u001b[32m\".form\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:775:17)\n    at Parser.raiseWithData (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:768:17)\n    at Parser.raise (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:736:17)\n    at ScopeHandler.checkRedeclarationInScope (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:1452:12)\n    at ScopeHandler.declareName (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:1418:12)\n    at Parser.checkLVal (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:10224:24)\n    at Parser.parseVarId (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:12898:10)\n    at Parser.parseVar (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:12873:12)\n    at Parser.parseVarStatement (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:12690:10)\n    at Parser.parseStatementContent (C:\\Users\\andoni.valero\\Git\\maquetacion\\node_modules\\@babel\\parser\\lib\\index.js:12282:21)");
+var changeButton = document.querySelectorAll('.change');
+var table = document.querySelectorAll(".table");
+var form = document.querySelectorAll(".form");
+changeButton.forEach(function (changeButton) {
+  changeButton.addEventListener("click", function () {
+    var visibleElements = document.querySelectorAll(".visible");
+
+    if (tableButton.classList.contains("visible")) {
+      tableButton.classList.remove("visible");
+      visibleElements.forEach(function (visibleElement) {
+        visibleElement.classList.remove("visible");
+      });
+    } else {
+      visibleElements.forEach(function (visibleElement) {
+        visibleElement.classList.remove("visible");
+      });
+      tableButton.classList.add("visible");
+    }
+  });
+});
 
 /***/ }),
 

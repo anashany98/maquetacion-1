@@ -22,11 +22,3 @@ function cambio(){
     }
 }
 
-edit.addEventListener('click',editar,true)
-
-function editar(){
-    if(true){
-    table.classList.remove('visible')
-    form.classList.add('visible')
-    }else{false}
-}

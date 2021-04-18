@@ -3,6 +3,7 @@ const table = document.getElementById("table");
 const form = document.getElementById("form");
 
 
+
 export let renderForm = () => {
 
     let forms = document.querySelectorAll(".admin-form");

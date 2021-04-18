@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <div class="table" id="table">
+    <div class="table visible" id="table">
         @yield('table')
     </div>
 
-    <div class="form visible" id="form">
+    <div class="form " id="form">
         @yield('form')
     </div>
 

@@ -19,15 +19,14 @@
 .form {
   display: none;
   background-color: white;
-  width: 90%;
+  width: 92%;
   height: 55vh;
-  margin-top: 4vh;
   padding: 1em;
-  border-radius: 1em;
   box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.226);
 }
 
 .form.visible {
+  display: initial;
   height: 100vh;
 }
 
@@ -105,6 +104,7 @@
 
 .table.visible {
   height: 100vh;
+  display: initial;
 }
 
 .table table {
@@ -262,13 +262,13 @@ li:hover {
   z-index: 2;
 }
 
-.change {
+#change {
   display: flex;
   justify-content: center;
   width: 8em;
   height: 3em;
 }
-.change svg {
+#change svg {
   color: white;
   width: 3em;
   height: 3em;

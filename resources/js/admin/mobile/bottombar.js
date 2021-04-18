@@ -1,35 +1,32 @@
-const changeButton=document.querySelectorAll('.change');
-const table = document.querySelectorAll(".table");
-const form = document.querySelectorAll(".form");
+var change = document.getElementById('change');
+var table = document.getElementById('table');
+var form =document.getElementById('form');
+var edit =document.getElementById('edit')
+var contador =0;
 
-changeButton.forEach(changeButton => { 
+change.addEventListener('click',cambio,true)
 
-    changeButton.addEventListener("click", () => {
+function cambio(){
+    if(contador ==0){
+        table.classList.remove('visible')
+        form.classList.add('visible')
+        contador=1;
+    }
+    else if (contador ==1){
+        table.classList.add('visible');
+        form.classList.remove('visible')
+        contador=0;
+       
+    }else{false
 
-        let visibleElements = document.querySelectorAll(".visible");
+    }
+}
 
-        if(tableButton.classList.contains("visible")){
+edit.addEventListener('click',editar,true)
 
-            tableButton.classList.remove("visible");
-
-            visibleElements.forEach(visibleElement => {
-                visibleElement.classList.remove("visible");
-            });
-
-        }else{
-
-            visibleElements.forEach(visibleElement => {
-                visibleElement.classList.remove("visible");
-            });
-            
-            tableButton.classList.add("visible");
-
-        }
-    });
-    
-});
-
-
-
-
-
+function editar(){
+    if(true){
+    table.classList.remove('visible')
+    form.classList.add('visible')
+    }else{false}
+}

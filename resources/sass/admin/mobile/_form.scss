@@ -3,15 +3,14 @@
 .form {
     display: none;
     background-color: hsl(0, 0%, 100%);
-    width: 90%;
+    width: 92%;
     height: 55vh;
-    margin-top: 4vh;
     padding: 1em;
-    border-radius: 1em;
     box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
 
 }
 .form.visible{
+    display: initial;
     height: 100vh;
 }
 

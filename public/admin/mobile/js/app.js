@@ -1876,26 +1876,35 @@ module.exports = {
   \************************************************/
 /***/ (() => {
 
-var changeButton = document.querySelectorAll('.change');
-var table = document.querySelectorAll(".table");
-var form = document.querySelectorAll(".form");
-changeButton.forEach(function (changeButton) {
-  changeButton.addEventListener("click", function () {
-    var visibleElements = document.querySelectorAll(".visible");
+var change = document.getElementById('change');
+var table = document.getElementById('table');
+var form = document.getElementById('form');
+var edit = document.getElementById('edit');
+var contador = 0;
+change.addEventListener('click', cambio, true);
 
-    if (tableButton.classList.contains("visible")) {
-      tableButton.classList.remove("visible");
-      visibleElements.forEach(function (visibleElement) {
-        visibleElement.classList.remove("visible");
-      });
-    } else {
-      visibleElements.forEach(function (visibleElement) {
-        visibleElement.classList.remove("visible");
-      });
-      tableButton.classList.add("visible");
-    }
-  });
-});
+function cambio() {
+  if (contador == 0) {
+    table.classList.remove('visible');
+    form.classList.add('visible');
+    contador = 1;
+  } else if (contador == 1) {
+    table.classList.add('visible');
+    form.classList.remove('visible');
+    contador = 0;
+  } else {
+    false;
+  }
+}
+
+edit.addEventListener('click', editar, true);
+
+function editar() {
+  if (true) {
+    table.classList.remove('visible');
+    form.classList.add('visible');
+  } else {}
+}
 
 /***/ }),
 

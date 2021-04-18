@@ -2,12 +2,11 @@
 .table{
     display: none;
     width: 100%;
-    
-    
 }
 
 .table.visible{
     height: 100vh;
+    display: initial;
 }
 .table table {
     border-collapse:collapse;

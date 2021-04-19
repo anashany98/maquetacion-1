@@ -1883,6 +1883,8 @@ __webpack_require__(/*! ./form */ "./resources/js/admin/desktop/form.js");
 __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/ckeditor.js");
 
 __webpack_require__(/*! ./sidebar */ "./resources/js/admin/desktop/sidebar.js");
+
+__webpack_require__(/*! ./filter */ "./resources/js/admin/desktop/filter.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1950,6 +1952,39 @@ var renderCkeditor = function renderCkeditor() {
     });
   });
 };
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/filter.js":
+/*!**********************************************!*\
+  !*** ./resources/js/admin/desktop/filter.js ***!
+  \**********************************************/
+/***/ (() => {
+
+var buttonFilters = document.querySelectorAll('.filter-button');
+var filter = document.querySelectorAll('.filter');
+buttonFilters.forEach(function (buttonFilter) {
+  buttonFilter.addEventListener("click", function () {
+    var appearElements = document.querySelectorAll(".appear");
+
+    if (buttonFilter.classList.contains("appear")) {
+      buttonFilter.classList.remove("appear");
+      appearElements.forEach(function (appearElement) {
+        appearElement.classList.remove("appear");
+      });
+    } else {
+      appearElements.forEach(function (appearElement) {
+        appearElement.classList.remove("appear");
+      });
+      buttonFilter.classList.add("appear");
+      filter.forEach(function (filter) {
+        if (filter.dataset.content == buttonFilter.dataset.button) {
+          filter.classList.add("appear");
+        } else {}
+      });
+    }
+  });
+});
 
 /***/ }),
 
@@ -2196,6 +2231,7 @@ var form = document.getElementById("form");
 var links = document.querySelectorAll(".link");
 var sidebar = document.querySelectorAll(".sidebar");
 var sidebarButton = document.querySelectorAll(".sidebar-button");
+var title = document.getElementById('title-page');
 links.forEach(function (link) {
   link.addEventListener("click", function () {
     var url = link.dataset.url;
@@ -2211,6 +2247,7 @@ links.forEach(function (link) {
                 return axios.get(url).then(function (response) {
                   form.innerHTML = response.data.form;
                   table.innerHTML = response.data.table;
+                  title.textContent = link.textContent;
                   window.history.pushState('', '', url);
                   (0,_form_js__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
                   (0,_form_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();

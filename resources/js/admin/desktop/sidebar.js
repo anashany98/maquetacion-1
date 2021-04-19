@@ -6,6 +6,7 @@ const form = document.getElementById("form");
 const links = document.querySelectorAll(".link");
 const sidebar = document.querySelectorAll(".sidebar");
 const sidebarButton = document.querySelectorAll(".sidebar-button")
+const title = document.getElementById('title-page')
 
 links.forEach(link =>{
 
@@ -19,12 +20,12 @@ links.forEach(link =>{
                 await axios.get(url).then(response => {
                     form.innerHTML = response.data.form;
                     table.innerHTML = response.data.table;
+                    title.textContent = link.textContent;
 
                     window.history.pushState('','',url);
 
                     renderForm();
                     renderTable();
-
 
                 });
                 

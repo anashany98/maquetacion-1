@@ -16,6 +16,7 @@
 
     <div class="wrapper">
         @include('admin.layout.partials.topbar')
+        @include('admin.layout.partials.filter')
         <div class="body">
             @include('admin.layout.partials.sidebar')
 

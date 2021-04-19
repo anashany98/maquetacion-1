@@ -1874,28 +1874,87 @@ module.exports = {
 /*!************************************************!*\
   !*** ./resources/js/admin/mobile/bottombar.js ***!
   \************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-var change = document.getElementById('change');
-var table = document.getElementById('table');
-var form = document.getElementById('form');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var bottombarItems = document.querySelectorAll('.bottombar-item');
+var table = document.getElementById("table");
+var form = document.getElementById("form");
 var edit = document.getElementById('edit');
-var contador = 0;
-change.addEventListener('click', cambio, true);
+bottombarItems.forEach(function (bottombarItem) {
+  bottombarItem.addEventListener("click", function () {
+    var visibleElements = document.querySelectorAll(".bottombar-visible");
+    visibleElements.forEach(function (visibleElement) {
+      visibleElement.classList.remove("bottombar-visible");
+    });
+    bottombarItem.classList.add('bottombar-visible');
 
-function cambio() {
-  if (contador == 0) {
-    table.classList.remove('visible');
-    form.classList.add('visible');
-    contador = 1;
-  } else if (contador == 1) {
-    table.classList.add('visible');
-    form.classList.remove('visible');
-    contador = 0;
-  } else {
-    false;
-  }
-}
+    if (bottombarItem.dataset.option == 'form') {
+      showForm();
+    }
+
+    if (bottombarItem.dataset.option == 'table') {
+      showTable(bottombarItem.dataset.url);
+    }
+  });
+});
+
+var showForm = function showForm() {
+  form.classList.add('visible');
+  table.classList.remove('visible');
+  hideFilterTable();
+};
+
+var showTable = function showTable(url) {
+  var sendShowRequest = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return axios.get(url).then(function (response) {
+                table.innerHTML = response.data.table;
+                renderTable();
+              });
+
+            case 3:
+              _context.next = 8;
+              break;
+
+            case 5:
+              _context.prev = 5;
+              _context.t0 = _context["catch"](0);
+              console.error(_context.t0);
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 5]]);
+    }));
+
+    return function sendShowRequest() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  sendShowRequest();
+  table.classList.add('visible');
+  form.classList.remove('visible');
+  showFilterTable();
+};
 
 /***/ }),
 
@@ -1932,6 +1991,39 @@ var renderCkeditor = function renderCkeditor() {
     });
   });
 };
+
+/***/ }),
+
+/***/ "./resources/js/admin/mobile/filter.js":
+/*!*********************************************!*\
+  !*** ./resources/js/admin/mobile/filter.js ***!
+  \*********************************************/
+/***/ (() => {
+
+var buttonFilters = document.querySelectorAll('.filter-button');
+var filter = document.querySelectorAll('.filter');
+buttonFilters.forEach(function (buttonFilter) {
+  buttonFilter.addEventListener("click", function () {
+    var appearElements = document.querySelectorAll(".appear");
+
+    if (buttonFilter.classList.contains("appear")) {
+      buttonFilter.classList.remove("appear");
+      appearElements.forEach(function (appearElement) {
+        appearElement.classList.remove("appear");
+      });
+    } else {
+      appearElements.forEach(function (appearElement) {
+        appearElement.classList.remove("appear");
+      });
+      buttonFilter.classList.add("appear");
+      filter.forEach(function (filter) {
+        if (filter.dataset.content == buttonFilter.dataset.button) {
+          filter.classList.add("appear");
+        } else {}
+      });
+    }
+  });
+});
 
 /***/ }),
 
@@ -2178,6 +2270,7 @@ var form = document.getElementById("form");
 var links = document.querySelectorAll(".link");
 var sidebar = document.querySelectorAll(".sidebar");
 var sidebarButton = document.querySelectorAll(".sidebar-button");
+var title = document.getElementById('title-page');
 links.forEach(function (link) {
   link.addEventListener("click", function () {
     var url = link.dataset.url;
@@ -2193,6 +2286,7 @@ links.forEach(function (link) {
                 return axios.get(url).then(function (response) {
                   form.innerHTML = response.data.form;
                   table.innerHTML = response.data.table;
+                  title.textContent = link.textContent;
                   window.history.pushState('', '', url);
                   (0,_form_js__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
                   (0,_form_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
@@ -20550,6 +20644,8 @@ __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/mobile/ckeditor.js")
 __webpack_require__(/*! ./sidebar */ "./resources/js/admin/mobile/sidebar.js");
 
 __webpack_require__(/*! ./bottombar */ "./resources/js/admin/mobile/bottombar.js");
+
+__webpack_require__(/*! ./filter */ "./resources/js/admin/mobile/filter.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

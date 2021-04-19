@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   background-color: gray;
 }
 
@@ -27,7 +27,7 @@
 
 .form.visible {
   display: initial;
-  height: 100vh;
+  height: 80vh;
 }
 
 .form form {
@@ -105,6 +105,7 @@
 .table.visible {
   height: 100vh;
   display: initial;
+  overflow: auto;
 }
 
 .table table {
@@ -130,6 +131,7 @@ th {
 }
 
 .table td {
+  height: 2em;
   font-size: 0.8em;
   width: 8em;
 }
@@ -147,6 +149,8 @@ th {
 }
 
 .table .button-container {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
 
@@ -242,7 +246,7 @@ li:hover {
   height: 3em;
 }
 
-.title-page {
+#title-page {
   align-items: center;
   display: flex;
   color: white;
@@ -255,23 +259,118 @@ li:hover {
 
 .bottom-bar {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
   height: 3em;
   background-color: black;
   z-index: 2;
 }
 
-#change {
+.bottombar-item {
   display: flex;
   justify-content: center;
   width: 8em;
-  height: 3em;
+  height: 2em;
 }
-#change svg {
+.bottombar-item svg {
   color: white;
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
+}
+
+.bottombar-visible {
+  display: flex;
+  justify-content: center;
+  width: 8em;
+  height: 2em;
+  background-color: #8ecacc;
+}
+.bottombar-visible svg {
+  color: black;
+  width: 2em;
+  height: 2em;
+}
+
+.main-filter {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+}
+
+.filter {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 0vh;
+  background-color: white;
+  transition: 0.5s;
+}
+.filter .label-container {
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+}
+.filter .input-container {
+  width: 30%;
+}
+
+.main-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.filter.appear {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+}
+.filter.appear .label-container {
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+}
+.filter.appear .input-container {
+  width: 30%;
+}
+.filter.appear button {
+  margin: 1em;
+  border: solid #8ecacc;
+  color: black;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.filter.appear button:hover {
+  background-color: #8ecacc;
+  color: white;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4vh;
+  background-color: #8ecacc;
+  cursor: pointer;
+}
+.filter-button svg {
+  width: 1.5em;
+  height: 1.5em;
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */

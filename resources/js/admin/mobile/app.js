@@ -3,6 +3,7 @@ require('./form');
 require('./ckeditor');
 require('./sidebar');
 require('./bottombar');
+require('./filter');
 
 
 /**

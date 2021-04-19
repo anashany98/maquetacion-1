@@ -1,38 +1,45 @@
-.top-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.main-topbar{
     width: 100%;
-    height: 3em;
-    background-color: black;
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
+
+    .top-bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 3em;
+        background-color: black;
+        z-index: 2;
+        
+    }
     
-}
-
-
-
-.sidebar-button{
-    width:3em;
-    height:3em ;
-    z-index: 3;
-    cursor: pointer;
-    color: hsl(0, 0%, 100%);
-    svg{
+    .sidebar-button{
         width:3em;
-        height:3em;
+        height:3em ;
+        z-index: 3;
+        cursor: pointer;
+        color: hsl(0, 0%, 100%);
+        svg{
+            width:3em;
+            height:3em;
+        }
+    }
+    
+    #title-page{
+        color: hsl(0, 0%, 100%);
+        text-align: center;
+        margin-top: 0.5em;
+        height: 3vh;
+        width: 10em;
+        font-size: 1.8em;
+        font-weight: bold;
+    
     }
 }
 
-.title-page{
-    color: hsl(0, 0%, 100%);
-    text-align: center;
-    margin-top: 0.5em;
-    height: 3vh;
-    width: 10em;
-    font-size: 1.8em;
-    font-weight: bold;
-    
-    
 
-    
-}
+
+
+
+

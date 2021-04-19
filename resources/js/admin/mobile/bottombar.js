@@ -1,24 +1,54 @@
-var change = document.getElementById('change');
-var table = document.getElementById('table');
-var form =document.getElementById('form');
-var edit =document.getElementById('edit')
-var contador =0;
+const bottombarItems = document.querySelectorAll('.bottombar-item');
+const table = document.getElementById("table");
+const form = document.getElementById("form");
+const edit =document.getElementById('edit');
 
-change.addEventListener('click',cambio,true)
+bottombarItems.forEach( bottombarItem => {
 
-function cambio(){
-    if(contador ==0){
-        table.classList.remove('visible')
-        form.classList.add('visible')
-        contador=1;
-    }
-    else if (contador ==1){
-        table.classList.add('visible');
-        form.classList.remove('visible')
-        contador=0;
-       
-    }else{false
+    bottombarItem.addEventListener("click", () => {
 
-    }
-}
+        let visibleElements = document.querySelectorAll(".bottombar-visible");
 
+        visibleElements.forEach(visibleElement => {
+            visibleElement.classList.remove("bottombar-visible");
+        });
+                
+        bottombarItem.classList.add('bottombar-visible');
+
+        if(bottombarItem.dataset.option == 'form'){
+            showForm();
+        }
+
+        if(bottombarItem.dataset.option == 'table'){
+            showTable(bottombarItem.dataset.url);
+        }
+    });
+});
+
+let showForm = () => {
+    form.classList.add('visible');
+    table.classList.remove('visible');
+    hideFilterTable();
+};
+
+let showTable = (url) => {
+
+    let sendShowRequest = async () => {
+
+        try {
+            await axios.get(url).then(response => {
+                table.innerHTML = response.data.table;
+                renderTable();
+            });
+            
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    sendShowRequest();
+
+    table.classList.add('visible');
+    form.classList.remove('visible');
+    showFilterTable();
+};

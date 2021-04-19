@@ -12,6 +12,7 @@
     overflow-wrap: break-word;
     table-layout: fixed;
     box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
+    overflow: auto;
     
    
 }
@@ -34,7 +35,8 @@ th{
 
 .table td{
     font-size: 0.8em;
-    width: 8em;
+    width: 2em;
+    height: 3em;
     
 }
 .table tr:hover{
@@ -51,15 +53,17 @@ th{
 }
 
 .table .button-container{
-
+    display: flex;
+    flex-direction: row;
     width:100%;
 }
 
 .edit{
     background-color: hsl(0, 0%, 100%);
-    border: none;
+    border:none;
     width:100%;
     transition-duration: 0.5s;
+    height: 2.8em;
     svg{
      
         width: 15px;

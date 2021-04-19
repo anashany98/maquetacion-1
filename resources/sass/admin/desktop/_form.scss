@@ -53,25 +53,24 @@
   background-color: white;
   border: none;
   color: white;
-  padding: 10px 13px;
+  padding: 0.5em 0.8em;
   text-align: center;
   text-decoration: none;
   color: black;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1em;
   margin: 0.5em ;
   transition-duration: 0.4s;
   cursor: pointer;
+  width: 8em;
 }
 
 
-.button{
-    width: 8em;
-}
+
 .button button:hover {
     background-color:  hsl(182, 38%, 68%);
     color: white;
-  }
+}
 
 .category-name{
 

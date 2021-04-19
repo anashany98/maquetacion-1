@@ -7,6 +7,7 @@
 .table.visible{
     height: 100vh;
     display: initial;
+    overflow: auto;
 }
 .table table {
     border-collapse:collapse;
@@ -37,6 +38,7 @@ th{
 }
 
 .table td{
+    height: 2em;
     font-size: 0.8em;
     width: 8em;
     
@@ -55,7 +57,8 @@ th{
 }
 
 .table .button-container{
-
+    display: flex;
+    flex-direction: row;
     width:100%;
 }
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -65,7 +66,7 @@
 
 .button button {
   background-color: white;
-  border: none;
+  border: solid #8ecacc;
   color: white;
   padding: 0.5em 0.8em;
   text-align: center;
@@ -117,6 +118,38 @@
 
 th {
   height: 2em;
+}
+
+.order-content {
+  display: flex;
+  flex-direction: row;
+}
+.order-content p {
+  margin-left: 0.2em;
+}
+.order-content #asc-order {
+  width: 1em;
+  height: 1em;
+  display: flex;
+  align-content: center;
+}
+.order-content #dsc-order {
+  width: 1em;
+  height: 1em;
+  display: flex;
+  align-content: center;
+}
+.order-content svg {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+}
+.order-content .order-arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .table td {
@@ -176,13 +209,24 @@ th {
   color: white;
 }
 
+.table-sortable th {
+  cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: "▴";
+}
+
+.table-sortable .th-sort-desc::after {
+  content: "▾";
+}
+
 .sidebar {
   width: 0;
   height: 100%;
   background-color: black;
   position: fixed;
   right: 0;
-  z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -227,7 +271,6 @@ li:hover {
 .main-topbar .sidebar-button {
   width: 3em;
   height: 3em;
-  z-index: 3;
   cursor: pointer;
   color: white;
 }
@@ -262,6 +305,17 @@ li:hover {
   background-color: white;
   transition: 0.5s;
 }
+.filter .filter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.filter .filter-form .date-input {
+  margin-top: 0.5em;
+  width: 50%;
+}
 .filter .label-container {
   width: 30%;
   text-align: center;
@@ -269,6 +323,9 @@ li:hover {
 }
 .filter .input-container {
   width: 30%;
+}
+.filter .input-container select {
+  width: 100%;
 }
 
 .main-filter {
@@ -283,7 +340,7 @@ li:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   background-color: white;
 }
 .filter.appear .label-container {

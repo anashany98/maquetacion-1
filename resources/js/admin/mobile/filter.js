@@ -1,5 +1,9 @@
-const buttonFilters = document.querySelectorAll('.filter-button')
-const filter = document.querySelectorAll('.filter')
+import {renderTable} from './form-table';
+
+const buttonFilters = document.querySelectorAll('.filter-button');
+const openFilter = document.querySelectorAll('.filter');
+const filterForm = document.getElementById("filter-form");
+const filter = document.getElementById('filter');
 
 buttonFilters.forEach(buttonFilter => { 
 
@@ -23,7 +27,7 @@ buttonFilters.forEach(buttonFilter => {
             
             buttonFilter.classList.add("appear");
 
-            filter.forEach(filter => {
+            openFilter.forEach(filter => {
 
                 if(filter.dataset.content == buttonFilter.dataset.button){
                     filter.classList.add("appear"); 
@@ -34,3 +38,28 @@ buttonFilters.forEach(buttonFilter => {
     });
     
 });
+
+filter.addEventListener( 'click', () => {      
+
+    let data = new FormData(filterForm);
+    let url = filterForm.action;
+
+    let sendPostRequest = async () => {
+
+        try {
+            await axios.post(url, data).then(response => {
+
+                table.innerHTML = response.data.table;
+                renderTable();
+                
+            });
+            
+        } catch (error) {
+
+        }
+    };
+
+    sendPostRequest();
+    
+});
+

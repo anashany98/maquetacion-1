@@ -1,5 +1,5 @@
 require('../../bootstrap');
-require('./form');
+require('./form-table');
 require('./ckeditor');
 require('./sidebar');
 require('./bottombar');

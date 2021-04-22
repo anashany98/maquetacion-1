@@ -66,11 +66,8 @@
         <div class="form-group">
             <div class="column">
 
-                <div class="label-container">
-                    <label for="id">ID:</label>
-                </div>
                 <div class="input-container">
-                    <input  name="id" value="{{isset($client->id) ? $client->id : ''}}">
+                    <input type="hidden" name="id" value="{{isset($client->id) ? $client->id : ''}}">
                 </div>
                 <div class="label-container">
                     <label for="name">Nombre/Razon Social:</label>

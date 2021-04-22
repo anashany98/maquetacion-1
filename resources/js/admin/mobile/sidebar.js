@@ -1,4 +1,4 @@
-import {renderForm, renderTable} from './form.js'
+import {renderForm, renderTable} from './form-table.js'
 
 const { default: axios } = require("axios");
 const table = document.getElementById("table");

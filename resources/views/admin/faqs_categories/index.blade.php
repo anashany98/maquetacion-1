@@ -54,11 +54,9 @@
 
         <div class="column">
             <div class="form-group">
-                <div class="label-container">   
-                    <label for="id">ID:</label>
-                </div>
+                
                 <div class="input-container">
-                    <input  name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
+                    <input type="hidden"  name="id" value="{{isset($faq_category->id) ? $faq_category->id : ''}}">
                 </div>
                
 

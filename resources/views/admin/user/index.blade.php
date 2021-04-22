@@ -61,11 +61,9 @@
     
         <div class="form-group">
             <div class="column">
-                <div class="label-container">
-                    <label for="id">ID:</label>
-                </div>
+              
                 <div class="input-container">
-                    <input name="id" value="{{isset($user->id) ? $user->id : ''}}">
+                    <input type="hidden" name="id" value="{{isset($user->id) ? $user->id : ''}}">
                 </div>
                 
 

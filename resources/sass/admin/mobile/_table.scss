@@ -18,10 +18,7 @@
     table-layout: fixed;
     box-shadow: 0.2em 0.2em 0.2em 0.2em hsla(0, 0%, 0%, 0.226), 0.2em 0.2em 0.2em 0.2em rgba(0, 0%, 0%, 0.226);
     
-   
 }
-
-
 
 .table tr{
     border-bottom: 0.1em solid hsla(0, 0%, 0%, 0.315);
@@ -95,4 +92,14 @@ th{
     color: hsl(0, 0%, 100%);
     
     
+}
+.table-sortable th{
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after{
+    content: "\25b4";
+}
+.table-sortable .th-sort-desc::after{
+    content: "\25be";
 }

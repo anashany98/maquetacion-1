@@ -3,7 +3,6 @@ const table = document.getElementById("table");
 const form = document.getElementById("form");
 
 
-
 export let renderForm = () => {
 
     let forms = document.querySelectorAll(".admin-form");
@@ -83,9 +82,10 @@ export let renderForm = () => {
 
 
 export let renderTable = () => {
-
+    
     let editButtons= document.querySelectorAll(".edit");
     let removeButtons = document.querySelectorAll(".remove");
+    let headerCells = document.querySelectorAll(".table-sortable th");
 
     editButtons.forEach(editButton => {
 
@@ -130,6 +130,52 @@ export let renderTable = () => {
             };
 
             sendDeleteRequest();
+        });
+    });
+
+    /**
+     * Ordenar HTML Tabla   
+     * 
+     * @param {HTMLTableElement} table La tabla que ordenamos 
+     * @param {number} column El index de la columna que ordenamos
+     * @param {boolean} asc Determina la dirreccion del orden asc o dsc 
+     */
+
+    headerCells.forEach(headerCell => {
+
+        headerCell.addEventListener("click", () =>{
+
+            let table= headerCell.parentElement.parentElement.parentElement;
+            let column = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+            let asc = !headerCell.classList.contains("th-sort-asc");
+
+            let dirModifier = asc ? 1 : -1;
+            let tBody = table.tBodies[0];
+            let rows = Array.from(tBody.querySelectorAll('tr'));
+
+            // Ordenar cada fila
+            let sortedRows = rows.sort((a, b) =>{
+
+                let aColText =a.querySelector(`td:nth-child(${column + 1})`).textContent.trim();
+                let bColText =b.querySelector(`td:nth-child(${ column + 1})`).textContent.trim();
+
+                return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+            });
+
+
+            // Eliminar los tr que existan en la tabla 
+
+            while(tBody.firstChild) {
+                tBody.removeChild(tBody.firstChild);
+            }
+
+            // Vuelve a añadir la nueva fila ordenada
+            tBody.append(...sortedRows);
+
+            // Recordad como esta la columna ordenada
+            table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
+            table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-asc", asc);
+            table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-desc", !asc);
         });
     });
 };

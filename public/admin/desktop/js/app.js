@@ -1878,7 +1878,7 @@ module.exports = {
 
 __webpack_require__(/*! ../../bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./form */ "./resources/js/admin/desktop/form.js");
+__webpack_require__(/*! ./form-table */ "./resources/js/admin/desktop/form-table.js");
 
 __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/ckeditor.js");
 
@@ -1959,10 +1959,24 @@ var renderCkeditor = function renderCkeditor() {
 /*!**********************************************!*\
   !*** ./resources/js/admin/desktop/filter.js ***!
   \**********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _form_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-table */ "./resources/js/admin/desktop/form-table.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 var buttonFilters = document.querySelectorAll('.filter-button');
-var filter = document.querySelectorAll('.filter');
+var openFilters = document.querySelectorAll('.filter');
+var filterForm = document.getElementById("filter-form");
+var filter = document.getElementById('filter');
 buttonFilters.forEach(function (buttonFilter) {
   buttonFilter.addEventListener("click", function () {
     var appearElements = document.querySelectorAll(".appear");
@@ -1977,21 +1991,61 @@ buttonFilters.forEach(function (buttonFilter) {
         appearElement.classList.remove("appear");
       });
       buttonFilter.classList.add("appear");
-      filter.forEach(function (filter) {
-        if (filter.dataset.content == buttonFilter.dataset.button) {
-          filter.classList.add("appear");
+      openFilters.forEach(function (openFilter) {
+        if (openFilter.dataset.content == buttonFilter.dataset.button) {
+          openFilter.classList.add("appear");
         } else {}
       });
     }
   });
 });
+filter.addEventListener('click', function () {
+  var data = new FormData(filterForm);
+  var url = filterForm.action;
+
+  var sendPostRequest = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return axios.post(url, data).then(function (response) {
+                table.innerHTML = response.data.table;
+                (0,_form_table__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
+              });
+
+            case 3:
+              _context.next = 7;
+              break;
+
+            case 5:
+              _context.prev = 5;
+              _context.t0 = _context["catch"](0);
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 5]]);
+    }));
+
+    return function sendPostRequest() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  sendPostRequest();
+});
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/form.js":
-/*!********************************************!*\
-  !*** ./resources/js/admin/desktop/form.js ***!
-  \********************************************/
+/***/ "./resources/js/admin/desktop/form-table.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/desktop/form-table.js ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2003,6 +2057,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ckeditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ckeditor */ "./resources/js/admin/desktop/ckeditor.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2114,6 +2176,7 @@ var renderForm = function renderForm() {
 var renderTable = function renderTable() {
   var editButtons = document.querySelectorAll(".edit");
   var removeButtons = document.querySelectorAll(".remove");
+  var headerCells = document.querySelectorAll(".table-sortable th");
   editButtons.forEach(function (editButton) {
     editButton.addEventListener("click", function () {
       var url = editButton.dataset.url;
@@ -2198,6 +2261,43 @@ var renderTable = function renderTable() {
       sendDeleteRequest();
     });
   });
+  /**
+   * Ordenar HTML Tabla   
+   * 
+   * @param {HTMLTableElement} table La tabla que ordenamos 
+   * @param {number} column El index de la columna que ordenamos
+   * @param {boolean} asc Determina la dirreccion del orden asc o dsc 
+   */
+
+  headerCells.forEach(function (headerCell) {
+    headerCell.addEventListener("click", function () {
+      var table = headerCell.parentElement.parentElement.parentElement;
+      var column = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+      var asc = !headerCell.classList.contains("th-sort-asc");
+      var dirModifier = asc ? 1 : -1;
+      var tBody = table.tBodies[0];
+      var rows = Array.from(tBody.querySelectorAll('tr')); // Ordenar cada fila
+
+      var sortedRows = rows.sort(function (a, b) {
+        var aColText = a.querySelector("td:nth-child(".concat(column + 1, ")")).textContent.trim();
+        var bColText = b.querySelector("td:nth-child(".concat(column + 1, ")")).textContent.trim();
+        return aColText > bColText ? 1 * dirModifier : -1 * dirModifier;
+      }); // Eliminar los tr que existan en la tabla 
+
+      while (tBody.firstChild) {
+        tBody.removeChild(tBody.firstChild);
+      } // Vuelve a añadir la nueva fila ordenada
+
+
+      tBody.append.apply(tBody, _toConsumableArray(sortedRows)); // Recordad como esta la columna ordenada
+
+      table.querySelectorAll("th").forEach(function (th) {
+        return th.classList.remove("th-sort-asc", "th-sort-desc");
+      });
+      table.querySelector("th:nth-child(".concat(column + 1, ")")).classList.toggle("th-sort-asc", asc);
+      table.querySelector("th:nth-child(".concat(column + 1, ")")).classList.toggle("th-sort-desc", !asc);
+    });
+  });
 };
 renderForm();
 renderTable();
@@ -2214,7 +2314,7 @@ renderTable();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
+/* harmony import */ var _form_table_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-table.js */ "./resources/js/admin/desktop/form-table.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2249,8 +2349,8 @@ links.forEach(function (link) {
                   table.innerHTML = response.data.table;
                   title.textContent = link.textContent;
                   window.history.pushState('', '', url);
-                  (0,_form_js__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
-                  (0,_form_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
+                  (0,_form_table_js__WEBPACK_IMPORTED_MODULE_1__.renderForm)();
+                  (0,_form_table_js__WEBPACK_IMPORTED_MODULE_1__.renderTable)();
                 });
 
               case 3:

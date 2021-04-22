@@ -16,7 +16,9 @@
 
     <div class="wrapper">
         @include('admin.layout.partials.topbar')
-        @include('admin.layout.partials.filter')
+        @if(isset($filters))
+            @include('admin.layout.partials.filter', $filters)
+        @endif
         <div class="body">
             @include('admin.layout.partials.sidebar')
 

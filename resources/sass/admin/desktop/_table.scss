@@ -31,6 +31,40 @@
 }
 th{
     height: 2em;
+   
+}
+.order-content{
+    display: flex;
+    flex-direction: row;
+    p{
+        margin-left: 00.2em;
+    }
+    #asc-order{
+        width: 1em;
+        height: 1em;
+        display: flex;
+        align-content: center;
+    }
+    #dsc-order{
+        width: 1em;
+        height: 1em;
+        display: flex;
+        align-content: center;
+    }
+    svg{
+        width: 1em;
+        height: 1em;
+        margin: 0
+
+    }
+    .order-arrow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
 }
 
 .table td{
@@ -92,4 +126,15 @@ th{
     color: hsl(0, 0%, 100%);
     
     
+}
+
+.table-sortable th{
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after{
+    content: "\25b4";
+}
+.table-sortable .th-sort-desc::after{
+    content: "\25be";
 }
